@@ -1,0 +1,20 @@
+<resources>
+
+    <!--style name="Theme.MaterialComponents.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="MyTheme.DayNight.Catalog" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="toolbarStyle">@style/Widget.MaterialComponents.Toolbar</item>
+        <item name="toolbarWithCloseButtonStyle">@style/Widget.MyTheme.Toolbar.WithCloseButton</item>
+        <item name="textInputSignInStyle">@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox</item>
+        <item name="windowActionModeOverlay">true</item>
+    </style>
+
+    <style name="Widget.MyTheme.Toolbar.WithCloseButton" parent="Widget.MaterialComponents.Toolbar.PrimarySurface">
+        <item name="navigationContentDescription">@string/toolbar_navigation_close_description</item>
+        <item name="navigationIcon">@drawable/ic_close_black_24dp</item>
+    </style-->
+
+</resources>

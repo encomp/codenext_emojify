@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">Emojify</string>
+    <string name="home_title">Emojify Me</string>
+    <string name="home_fab_title">Take a Selfie</string>
+    <string name="photo_title">Photo</string>
+    <string name="toolbar_navigation_close_description">Close</string>
+    <string name="ic_camera_front_fab_button_content_description">Take a Selfie</string>
+    <string name="image_view_description">Photo</string>
+    <string name="ic_camera_save_fab_button_content_description">Save Photo</string>
+    <string name="ic_camera_share_menu_title">Share Photo</string>
+    <string name="ic_camera_delete_menu_title">Delete Photo</string>
+    <string name="error_message">Error finding image</string>
+    <string name="saved_message">Image Saved at %1$s</string>
+</resources>
