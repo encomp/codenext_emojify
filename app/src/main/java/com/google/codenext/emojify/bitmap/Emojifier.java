@@ -21,6 +21,8 @@ public final class Emojifier {
   private static final double SMILING_PROB_THRESHOLD = .15;
   private static final double EYE_OPEN_PROB_THRESHOLD = .5;
 
+  // TODO (3): Change the name of the detectFaces() method to detectFacesAndOverlayEmoji() and the
+  // return type from void to Bitmap
   /**
    * Method for detecting faces in a bitmap.
    *
@@ -45,6 +47,9 @@ public final class Emojifier {
     // Log the number of faces found on the bitmap.
     Timber.tag(TAG).d("The number of faces found are: " + faces.size());
 
+    // TODO (7): Create a variable called resultBitmap and initialize it to the original picture
+    // bitmap passed into the detectFacesAndOverlayEmoji() method.
+
     // If there are no faces on a bitmap show a Toast message.
     if (faces.size() == 0) {
       Toast.makeText(context, R.string.no_faces_message, Toast.LENGTH_SHORT).show();
@@ -54,13 +59,23 @@ public final class Emojifier {
         Face face = faces.valueAt(i);
         // Log the probabilities for each face using the method whichEmoji.
         whichEmoji(face);
+        // TODO (4): Create a variable called emojiBitmap to hold the appropriate Emoji bitmap and
+        // remove the call to whichEmoji().
+
+        // TODO (5): Create a switch statement on the result of the whichEmoji() call, and assign
+        // the proper emoji bitmap to the variable you created.
+
+        // TODO (8): Call addBitmapToFace(), passing in the resultBitmap, the emojiBitmap and the
+        // Face  object, and assigning the result to resultBitmap.
       }
     }
 
     // Release the detector to free up native resources that are no longer needed.
     detector.release();
+    // TODO (9): Return the resultBitmap
   }
 
+  // TODO (1): Change the return type of the whichEmoji() method from void to Emoji.
   /**
    * Determines the proper emoji for a given {@link Face} instance:
    *
@@ -84,7 +99,7 @@ public final class Emojifier {
     Timber.tag(TAG).d("RightEyeOpen:" + face.getIsRightEyeOpenProbability());
 
     // The method should log probability of the person being smiling.
-    Timber.tag(TAG).d("RightEyeOpen:" + face.getIsSmilingProbability());
+    Timber.tag(TAG).d("Smile:" + face.getIsSmilingProbability());
 
     // Create 3 boolean variables to track the state of the facial expression based on the threshold
     // constants: smiling, left eye closed, right eye closed.
@@ -119,7 +134,12 @@ public final class Emojifier {
 
     // Log the chosen Emoji
     Timber.tag(TAG).d("whichEmoji: " + emoji.name());
+    // TODO (2): Have the method return the selected Emoji type.
   }
+
+  // TODO (6) Create a method called addBitmapToFace() which takes the background bitmap, the Emoji
+  // bitmap, and a Face object as arguments and returns the combined bitmap with the Emoji over the
+  // face.
 
   /**
    * Enum class that contains all the possible emojis:
