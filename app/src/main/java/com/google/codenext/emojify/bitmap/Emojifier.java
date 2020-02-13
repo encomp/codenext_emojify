@@ -17,11 +17,7 @@ public final class Emojifier {
 
   private Emojifier() {}
 
-  // Define a log TAG
   private static final String TAG = Emojifier.class.getSimpleName();
-
-  // TODO (3b): Use these threshold constants to define 3 variables: smiling, left eye closed, right
-  // eye closed.
   private static final double SMILING_PROB_THRESHOLD = .15;
   private static final double EYE_OPEN_PROB_THRESHOLD = .5;
 
@@ -56,8 +52,8 @@ public final class Emojifier {
       // Iterate through all the faces to calculate the probabilities for each one.
       for (int i = 0; i < faces.size(); ++i) {
         Face face = faces.valueAt(i);
-        // Log the probabilities for each face using the method getClassifications.
-        getClassifications(face);
+        // Log the probabilities for each face using the method whichEmoji.
+        whichEmoji(face);
       }
     }
 
@@ -65,9 +61,10 @@ public final class Emojifier {
     detector.release();
   }
 
-  // TODO (2): Change the name of the getClassifications() method to whichEmoji().
   /**
-   * Calculate the following probabilities on a given {@link Face} instance:
+   * Determines the proper emoji for a given {@link Face} instance:
+   *
+   * <p>This method calculates the probability of the eyes being open and the mouth being smiling.
    *
    * <ul>
    *   <li>Calculate the probability of the left eye being open.
@@ -75,9 +72,11 @@ public final class Emojifier {
    *   <li>The method should log probability of the person being smiling.
    * </ul>
    *
+   * Using the probabilities above an emoji will be assigned to the given face.
+   *
    * @param face the object that will be used analyzed.
    */
-  private static void getClassifications(Face face) {
+  private static void whichEmoji(Face face) {
     // The method should log the probability of the left eye being open.
     Timber.tag(TAG).d("LeftEyeOpen:" + face.getIsLeftEyeOpenProbability());
 
@@ -87,14 +86,63 @@ public final class Emojifier {
     // The method should log probability of the person being smiling.
     Timber.tag(TAG).d("RightEyeOpen:" + face.getIsSmilingProbability());
 
-    // TODO (3a): Create 3 boolean variables to track the state of the facial expression based on
-    // the threshold constants: smiling, left eye closed, right eye closed.
+    // Create 3 boolean variables to track the state of the facial expression based on the threshold
+    // constants: smiling, left eye closed, right eye closed.
+    boolean smiling = face.getIsSmilingProbability() > SMILING_PROB_THRESHOLD;
+    boolean leftEyeClosed = face.getIsLeftEyeOpenProbability() < EYE_OPEN_PROB_THRESHOLD;
+    boolean rightEyeClosed = face.getIsRightEyeOpenProbability() < EYE_OPEN_PROB_THRESHOLD;
 
-    // TODO (4): Create an if/else system that selects the appropriate emoji enum type based on the
-    // above booleans and log the result.
+    // Create an if/else system that selects the appropriate emoji enum type based on the above
+    // booleans and log the result.
+    Emoji emoji;
+    if (smiling) {
+      if (leftEyeClosed && !rightEyeClosed) {
+        emoji = Emoji.LEFT_WINK;
+      } else if (rightEyeClosed && !leftEyeClosed) {
+        emoji = Emoji.RIGHT_WINK;
+      } else if (leftEyeClosed) {
+        emoji = Emoji.CLOSED_EYE_SMILE;
+      } else {
+        emoji = Emoji.SMILE;
+      }
+    } else {
+      if (leftEyeClosed && !rightEyeClosed) {
+        emoji = Emoji.LEFT_WINK_FROWN;
+      } else if (rightEyeClosed && !leftEyeClosed) {
+        emoji = Emoji.RIGHT_WINK_FROWN;
+      } else if (leftEyeClosed) {
+        emoji = Emoji.CLOSED_EYE_FROWN;
+      } else {
+        emoji = Emoji.FROWN;
+      }
+    }
+
+    // Log the chosen Emoji
+    Timber.tag(TAG).d("whichEmoji: " + emoji.name());
   }
 
-  // TODO (1): Create an enum class called Emoji that contains all the possible emoji you can make
-  // (smiling, frowning, left wink, right wink, left wink frowning, right wink frowning, closed eye
-  // smiling, close eye frowning).
+  /**
+   * Enum class that contains all the possible emojis:
+   *
+   * <ul>
+   *   <li>smiling
+   *   <li>frowning
+   *   <li>left wink
+   *   <li>right wink
+   *   <li>left wink frowning
+   *   <li>right wink frowning
+   *   <li>closed eye smiling
+   *   <li>close eye frowning
+   * </ul>
+   */
+  private enum Emoji {
+    SMILE,
+    FROWN,
+    LEFT_WINK,
+    RIGHT_WINK,
+    LEFT_WINK_FROWN,
+    RIGHT_WINK_FROWN,
+    CLOSED_EYE_SMILE,
+    CLOSED_EYE_FROWN
+  }
 }
