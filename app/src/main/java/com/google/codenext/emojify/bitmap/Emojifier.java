@@ -47,20 +47,38 @@ public final class Emojifier {
     // If there are no faces on a bitmap show a Toast message.
     if (faces.size() == 0) {
       Toast.makeText(context, R.string.no_faces_message, Toast.LENGTH_SHORT).show();
+    } else {
+      // Iterate through all the faces to calculate the probabilities for each one.
+      for (int i = 0; i < faces.size(); ++i) {
+        Face face = faces.valueAt(i);
+        // Log the probabilities for each face using the method getClassifications.
+        getClassifications(face);
+      }
     }
-
-    // TODO (5): Iterate through the faces, calling getClassifications() for each face.
 
     // Release the detector to free up native resources that are no longer needed.
     detector.release();
   }
 
-  // TODO (1): Create a private static method called getClassifications() that receives a Face
-  //  object as an argument.
+  /**
+   * Calculate the following probabilities on a given {@link Face} instance:
+   *
+   * <ul>
+   *   <li>Calculate the probability of the left eye being open.
+   *   <li>Calculate the probability of the right eye being open.
+   *   <li>The method should log probability of the person being smiling.
+   * </ul>
+   *
+   * @param face the object that will be used analyzed.
+   */
+  private static void getClassifications(Face face) {
+    // The method should log the probability of the left eye being open.
+    Timber.tag(TAG).d("LeftEyeOpen:" + face.getIsLeftEyeOpenProbability());
 
-  // TODO (2): The method should log the probability of the left eye being open.
+    // The method should log the probability of the right eye being open.
+    Timber.tag(TAG).d("RightEyeOpen:" + face.getIsRightEyeOpenProbability());
 
-  // TODO (3): The method should log the probability of the right eye being open.
-
-  // TODO (4): The method should log probability of the person being smiling.
+    // The method should log probability of the person being smiling.
+    Timber.tag(TAG).d("RightEyeOpen:" + face.getIsSmilingProbability());
+  }
 }
