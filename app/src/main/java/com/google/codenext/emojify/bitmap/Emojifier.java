@@ -20,6 +20,11 @@ public final class Emojifier {
   // Define a log TAG
   private static final String TAG = Emojifier.class.getSimpleName();
 
+  // TODO (3b): Use these threshold constants to define 3 variables: smiling, left eye closed, right
+  // eye closed.
+  private static final double SMILING_PROB_THRESHOLD = .15;
+  private static final double EYE_OPEN_PROB_THRESHOLD = .5;
+
   /**
    * Method for detecting faces in a bitmap.
    *
@@ -60,6 +65,7 @@ public final class Emojifier {
     detector.release();
   }
 
+  // TODO (2): Change the name of the getClassifications() method to whichEmoji().
   /**
    * Calculate the following probabilities on a given {@link Face} instance:
    *
@@ -80,5 +86,15 @@ public final class Emojifier {
 
     // The method should log probability of the person being smiling.
     Timber.tag(TAG).d("RightEyeOpen:" + face.getIsSmilingProbability());
+
+    // TODO (3a): Create 3 boolean variables to track the state of the facial expression based on
+    // the threshold constants: smiling, left eye closed, right eye closed.
+
+    // TODO (4): Create an if/else system that selects the appropriate emoji enum type based on the
+    // above booleans and log the result.
   }
+
+  // TODO (1): Create an enum class called Emoji that contains all the possible emoji you can make
+  // (smiling, frowning, left wink, right wink, left wink frowning, right wink frowning, closed eye
+  // smiling, close eye frowning).
 }
