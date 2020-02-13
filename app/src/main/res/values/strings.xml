@@ -11,4 +11,6 @@
     <string name="ic_camera_delete_menu_title">Delete Photo</string>
     <string name="error_message">Error finding image</string>
     <string name="saved_message">Image Saved at %1$s</string>
+    <!-- Add a new string for the error message when an image does not have faces. -->
+    <string name="no_faces_message">Could not find a face on the give image.</string>
 </resources>
