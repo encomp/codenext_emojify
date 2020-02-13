@@ -30,10 +30,10 @@ public final class Emojifier {
     // Add the code that detects the number of faces in a given bitmap.
     // Create a FaceDetector that identifies the faces of people in a Bitmap graphic object.
     FaceDetector detector =
-            new FaceDetector.Builder(context)
-                    .setTrackingEnabled(false)
-                    .setClassificationType(FaceDetector.ALL_CLASSIFICATIONS)
-                    .build();
+        new FaceDetector.Builder(context)
+            .setTrackingEnabled(false)
+            .setClassificationType(FaceDetector.ALL_CLASSIFICATIONS)
+            .build();
 
     // Create a Frame instance from the bitmap to supply to the detector.
     Frame frame = new Frame.Builder().setBitmap(picture).build();
@@ -49,7 +49,18 @@ public final class Emojifier {
       Toast.makeText(context, R.string.no_faces_message, Toast.LENGTH_SHORT).show();
     }
 
+    // TODO (5): Iterate through the faces, calling getClassifications() for each face.
+
     // Release the detector to free up native resources that are no longer needed.
     detector.release();
   }
+
+  // TODO (1): Create a private static method called getClassifications() that receives a Face
+  //  object as an argument.
+
+  // TODO (2): The method should log the probability of the left eye being open.
+
+  // TODO (3): The method should log the probability of the right eye being open.
+
+  // TODO (4): The method should log probability of the person being smiling.
 }
