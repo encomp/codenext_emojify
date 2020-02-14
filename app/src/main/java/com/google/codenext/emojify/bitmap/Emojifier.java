@@ -113,9 +113,9 @@ public final class Emojifier {
     Emoji emoji;
     if (smiling) {
       if (leftEyeClosed && !rightEyeClosed) {
-        emoji = Emoji.LEFT_WINK;
+        emoji = Emoji.LEFT_WINK_SMILE;
       } else if (rightEyeClosed && !leftEyeClosed) {
-        emoji = Emoji.RIGHT_WINK;
+        emoji = Emoji.RIGHT_WINK_SMILE;
       } else if (leftEyeClosed) {
         emoji = Emoji.CLOSED_EYE_SMILE;
       } else {
@@ -177,8 +177,8 @@ public final class Emojifier {
   private enum Emoji {
     SMILE,
     FROWN,
-    LEFT_WINK,
-    RIGHT_WINK,
+    LEFT_WINK_SMILE,
+    RIGHT_WINK_SMILE,
     LEFT_WINK_FROWN,
     RIGHT_WINK_FROWN,
     CLOSED_EYE_SMILE,
