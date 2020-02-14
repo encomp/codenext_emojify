@@ -149,15 +149,13 @@ public final class Emojifier {
             backgroundBitmap.getHeight(),
             backgroundBitmap.getConfig());
 
-    // TODO (6.1): Scale the emoji so it looks better on the face.
+    // TODO (6.1): Determine the size of the emoji to match the width and height of the face.
 
-    // TODO (6.2): Determine the size of the emoji to match the width and height of the face.
+    // TODO (6.2): Scale the emoji.
 
-    // TODO (6.3): Scale the emoji.
+    // TODO (6.3): Determine the emoji position so it best lines up with the face.
 
-    // TODO (6.4): Determine the emoji position so it best lines up with the face.
-
-    // TODO (6.5): Create the canvas and draw the bitmaps to it.
+    // TODO (6.4): Create the canvas and draw the bitmaps to it.
 
     return resultBitmap;
   }
