@@ -131,6 +131,7 @@ public class HomeFragment extends Fragment {
     if (requestCode == REQUEST_IMAGE_CAPTURE && resultCode == Activity.RESULT_OK) {
       // Resample the saved image to fit the ImageView
       Bitmap photo = BitmapUtils.resamplePic(getContext(), viewModel.getPhotoPath());
+      // TODO (5): Call detect face to log the emoji information
       // Save the photo on the view model
       viewModel.setPhoto(photo);
       // Navigate to the Photo fragment to see the picture taken
