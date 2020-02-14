@@ -133,7 +133,7 @@ public class HomeFragment extends Fragment {
       // Resample the saved image to fit the ImageView
       Bitmap photo = BitmapUtils.resamplePic(getContext(), viewModel.getPhotoPath());
       // Detect faces
-      Emojifier.detectFaces(getContext(), photo);
+      photo = Emojifier.detectFacesandOverlayEmoji(getContext(), photo);
       // Save the photo on the view model
       viewModel.setPhoto(photo);
       // Navigate to the Photo fragment to see the picture taken

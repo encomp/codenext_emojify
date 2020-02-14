@@ -2,6 +2,8 @@ package com.google.codenext.emojify.bitmap;
 
 import android.content.Context;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.graphics.Canvas;
 import android.util.SparseArray;
 import android.widget.Toast;
 
@@ -22,15 +24,14 @@ public final class Emojifier {
   private static final double SMILING_PROB_THRESHOLD = .15;
   private static final double EYE_OPEN_PROB_THRESHOLD = .5;
 
-  // TODO (3): Change the name of the detectFaces() method to detectFacesAndOverlayEmoji() and the
-  // return type from void to Bitmap
   /**
    * Method for detecting faces in a bitmap.
    *
    * @param context The application context.
    * @param picture The picture in which to detect the faces.
+   * @return a new bitmap image with the proper emoji on top of a face.
    */
-  public static void detectFaces(Context context, Bitmap picture) {
+  public static Bitmap detectFacesandOverlayEmoji(Context context, Bitmap picture) {
     // Add the code that detects the number of faces in a given bitmap.
     // Create a FaceDetector that identifies the faces of people in a Bitmap graphic object.
     FaceDetector detector =
@@ -48,8 +49,8 @@ public final class Emojifier {
     // Log the number of faces found on the bitmap.
     Timber.tag(TAG).d("The number of faces found are: " + faces.size());
 
-    // TODO (7): Create a variable called resultBitmap and initialize it to the original picture
-    // bitmap passed into the detectFacesAndOverlayEmoji() method.
+    // Initialize it to the original picture bitmap.
+    Bitmap resultBitmap = picture;
 
     // If there are no faces on a bitmap show a Toast message.
     if (faces.size() == 0) {
@@ -58,25 +59,68 @@ public final class Emojifier {
       // Iterate through all the faces to calculate the probabilities for each one.
       for (int i = 0; i < faces.size(); ++i) {
         Face face = faces.valueAt(i);
-        // Log the probabilities for each face using the method whichEmoji.
-        whichEmoji(face);
-        // TODO (4): Create a variable called emojiBitmap to hold the appropriate Emoji bitmap and
-        // remove the call to whichEmoji().
 
-        // TODO (5): Create a switch statement on the result of the whichEmoji() call, and assign
-        // the proper emoji bitmap to the variable you created.
+        Bitmap emojiBitmap;
 
-        // TODO (8): Call addBitmapToFace(), passing in the resultBitmap, the emojiBitmap and the
-        // Face  object, and assigning the result to resultBitmap.
+        // Specifies which emoji will be used for the face.
+        Emoji emoji = whichEmoji(face);
+
+        // From the Emoji enum create a bitmap of the appropriate PNG emoji image
+        switch (emoji) {
+          case FROWN:
+            emojiBitmap = BitmapFactory.decodeResource(context.getResources(), R.drawable.frown);
+            break;
+
+          case CLOSED_EYE_FROWN:
+            emojiBitmap =
+                BitmapFactory.decodeResource(context.getResources(), R.drawable.closed_eye_frown);
+            break;
+
+          case LEFT_WINK_FROWN:
+            emojiBitmap =
+                BitmapFactory.decodeResource(context.getResources(), R.drawable.left_wink_frown);
+            break;
+
+          case RIGHT_WINK_FROWN:
+            emojiBitmap =
+                BitmapFactory.decodeResource(context.getResources(), R.drawable.right_wink_frown);
+            break;
+
+          case SMILE:
+            emojiBitmap = BitmapFactory.decodeResource(context.getResources(), R.drawable.smile);
+            break;
+
+          case CLOSED_EYE_SMILE:
+            emojiBitmap =
+                BitmapFactory.decodeResource(context.getResources(), R.drawable.closed_eye_smile);
+            break;
+
+          case LEFT_WINK_SMILE:
+            emojiBitmap =
+                BitmapFactory.decodeResource(context.getResources(), R.drawable.left_wink_smile);
+            break;
+
+          case RIGHT_WINK_SMILE:
+            emojiBitmap =
+                BitmapFactory.decodeResource(context.getResources(), R.drawable.right_wink_smile);
+            break;
+
+          default:
+            emojiBitmap = null;
+            // Toast.makeText(context, R.string.no_emoji, Toast.LENGTH_SHORT).show();
+            break;
+        }
+
+        // Add the emojiBitmap to the proper position in the original image
+        resultBitmap = addBitmapToFace(resultBitmap, emojiBitmap, face);
       }
     }
 
     // Release the detector to free up native resources that are no longer needed.
     detector.release();
-    // TODO (9): Return the resultBitmap
+    return resultBitmap;
   }
 
-  // TODO (1): Change the return type of the whichEmoji() method from void to Emoji.
   /**
    * Determines the proper emoji for a given {@link Face} instance:
    *
@@ -91,8 +135,9 @@ public final class Emojifier {
    * Using the probabilities above an emoji will be assigned to the given face.
    *
    * @param face the object that will be used analyzed.
+   * @return the proper {@link Emoji} of the face provided
    */
-  private static void whichEmoji(Face face) {
+  private static Emoji whichEmoji(Face face) {
     // The method should log the probability of the left eye being open.
     Timber.tag(TAG).d("LeftEyeOpen:" + face.getIsLeftEyeOpenProbability());
 
@@ -113,9 +158,9 @@ public final class Emojifier {
     Emoji emoji;
     if (smiling) {
       if (leftEyeClosed && !rightEyeClosed) {
-        emoji = Emoji.LEFT_WINK;
+        emoji = Emoji.LEFT_WINK_SMILE;
       } else if (rightEyeClosed && !leftEyeClosed) {
-        emoji = Emoji.RIGHT_WINK;
+        emoji = Emoji.RIGHT_WINK_SMILE;
       } else if (leftEyeClosed) {
         emoji = Emoji.CLOSED_EYE_SMILE;
       } else {
@@ -135,12 +180,17 @@ public final class Emojifier {
 
     // Log the chosen Emoji
     Timber.tag(TAG).d("whichEmoji: " + emoji.name());
-    // TODO (2): Have the method return the selected Emoji type.
+    return emoji;
   }
 
-  // TODO (6): Create a method called addBitmapToFace() which takes the background bitmap, the Emoji
-  // bitmap, and a Face object as arguments and returns the combined bitmap with the Emoji over the
-  // face.
+  /**
+   * Takes the background bitmap, the Emoji bitmap, and a Face object as arguments and returns the
+   * combined bitmap with the Emoji over the face.
+   *
+   * @param backgroundBitmap specifies the photo
+   * @param emojiBitmap specifies the emoji that will be render on top of a face
+   * @param face specifies the face location in where the emoji will be render
+   */
   private static Bitmap addBitmapToFace(Bitmap backgroundBitmap, Bitmap emojiBitmap, Face face) {
     // Create a copy of the original image.
     Bitmap resultBitmap =
@@ -149,15 +199,24 @@ public final class Emojifier {
             backgroundBitmap.getHeight(),
             backgroundBitmap.getConfig());
 
-    // TODO (6.1): Scale the emoji so it looks better on the face.
+    // Determine the size of the emoji to match the width and height of the face.
+    int emojiWidth = (int) (face.getWidth() * EMOJI_SCALE_FACTOR);
+    int emojiHeight =
+        (int) (emojiBitmap.getHeight() * emojiWidth / emojiBitmap.getWidth() * EMOJI_SCALE_FACTOR);
 
-    // TODO (6.2): Determine the size of the emoji to match the width and height of the face.
+    // Scale the emoji.
+    emojiBitmap = Bitmap.createScaledBitmap(emojiBitmap, emojiWidth, emojiHeight, false);
 
-    // TODO (6.3): Scale the emoji.
+    // Determine the emoji position so it best lines up with the face.
+    float emojiPositionX =
+        (face.getPosition().x + face.getWidth() / 2) - emojiBitmap.getWidth() / 2;
+    float emojiPositionY =
+        (face.getPosition().y + face.getHeight() / 2) - emojiBitmap.getHeight() / 3;
 
-    // TODO (6.4): Determine the emoji position so it best lines up with the face.
-
-    // TODO (6.5): Create the canvas and draw the bitmaps to it.
+    // Create the canvas and draw the bitmaps to it.
+    Canvas canvas = new Canvas(resultBitmap);
+    canvas.drawBitmap(backgroundBitmap, 0, 0, null);
+    canvas.drawBitmap(emojiBitmap, emojiPositionX, emojiPositionY, null);
 
     return resultBitmap;
   }
@@ -179,8 +238,8 @@ public final class Emojifier {
   private enum Emoji {
     SMILE,
     FROWN,
-    LEFT_WINK,
-    RIGHT_WINK,
+    LEFT_WINK_SMILE,
+    RIGHT_WINK_SMILE,
     LEFT_WINK_FROWN,
     RIGHT_WINK_FROWN,
     CLOSED_EYE_SMILE,
