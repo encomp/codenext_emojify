@@ -20,6 +20,7 @@ public final class Emojifier {
   // Define a log TAG
   private static final String TAG = Emojifier.class.getSimpleName();
 
+  private static final float EMOJI_SCALE_FACTOR = .9f;
   // TODO (3b): Use these threshold constants to define 3 variables: smiling, left eye closed, right
   // eye closed.
   private static final double SMILING_PROB_THRESHOLD = .15;
@@ -95,6 +96,6 @@ public final class Emojifier {
   }
 
   // TODO (1): Create an enum class called Emoji that contains all the possible emoji you can make
-  // (smiling, frowning, left wink, right wink, left wink frowning, right wink frowning, closed eye
-  // smiling, close eye frowning).
+  // (smile, frown, left wink smile, right wink smile, left wink frown, right wink frown,
+  // closed eye smile, close eye frown).
 }
