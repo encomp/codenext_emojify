@@ -18,6 +18,7 @@ public final class Emojifier {
   private Emojifier() {}
 
   private static final String TAG = Emojifier.class.getSimpleName();
+  private static final float EMOJI_SCALE_FACTOR = .9f;
   private static final double SMILING_PROB_THRESHOLD = .15;
   private static final double EYE_OPEN_PROB_THRESHOLD = .5;
 
@@ -137,9 +138,29 @@ public final class Emojifier {
     // TODO (2): Have the method return the selected Emoji type.
   }
 
-  // TODO (6) Create a method called addBitmapToFace() which takes the background bitmap, the Emoji
+  // TODO (6): Create a method called addBitmapToFace() which takes the background bitmap, the Emoji
   // bitmap, and a Face object as arguments and returns the combined bitmap with the Emoji over the
   // face.
+  private static Bitmap addBitmapToFace(Bitmap backgroundBitmap, Bitmap emojiBitmap, Face face) {
+    // Create a copy of the original image.
+    Bitmap resultBitmap =
+        Bitmap.createBitmap(
+            backgroundBitmap.getWidth(),
+            backgroundBitmap.getHeight(),
+            backgroundBitmap.getConfig());
+
+    // TODO (6.1): Scale the emoji so it looks better on the face.
+
+    // TODO (6.2): Determine the size of the emoji to match the width and height of the face.
+
+    // TODO (6.3): Scale the emoji.
+
+    // TODO (6.4): Determine the emoji position so it best lines up with the face.
+
+    // TODO (6.5): Create the canvas and draw the bitmaps to it.
+
+    return resultBitmap;
+  }
 
   /**
    * Enum class that contains all the possible emojis:
