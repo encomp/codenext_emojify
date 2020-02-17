@@ -9,11 +9,11 @@ The goal of the is to develop a mobile app that takes a picture of people and us
 * Make use of the Firbase MLKit Vision Api to build a face detector.
 * Determine how many faces there are on a photo.
 * Identify facial characteristics for each face:
- * Right eye open or close
- * Left eye open or close
- * Smiling or frown
+  * Right eye open or close
+  * Left eye open or close
+  * Smiling or frown
 * Replace each face with the proper emoji on top of the original photo.
- * Smile: 
+  * Smile: 
    <p align="center">
      <img src="/app/src/main/res/drawable/smile.png" alt="" data-canonical-src="/images/smile.png" width="144" height="144" />
      <img src="/app/src/main/res/drawable/right_wink_smile.png" alt="" data-canonical-src="/images/rightwink.png" width="144" height="144" />
