@@ -70,6 +70,8 @@ The home fragment is defined on the `home_fragment.xml` as follows:
   * Defines a [Material Tool Bar](https://developer.android.com/reference/com/google/android/material/appbar/MaterialToolbar)
     that provides the activity title and can declare other interactive
     items.
+  * Defines a [Text View](https://developer.android.com/reference/android/widget/TextView)
+    to display the title of the application.
   * Defines an include layout with the value of `home_content.xml`
   * Defines a [Bottom App Bar](https://material.io/develop/android/components/bottom-app-bar/)
     to define one main FAB located in the center of the bar.
@@ -77,9 +79,17 @@ The home fragment is defined on the `home_fragment.xml` as follows:
     (FAB) to denote the primary action of the screen in this case to
     take a photo.
 
-  home_fragment.xml | home_content.xml |
-  | --------------- | :---------------:|
-  | <img src="/resources/home_fragment.png" alt="" data-canonical-src="/images/icon.png" width="535" height="790" /> | <img src="/resources/home_content.png" alt="" data-canonical-src="/images/icon.png" width="535" height="790" /> |
+The `home_fragment.xml` is defined as follows:
+
+  <p align="center">
+      <img src="/resources/home_content.png" data-canonical-src="/images/home_content.png" width="535" height="790" />
+  </p>
+
+   * Defines a [Constraint Layout](https://www.youtube.com/watch?time_continue=3&v=XamMbnzI5vE&feature=emb_logo)
+     that allows [placing](https://developer.android.com/training/constraint-layout)
+     components according to relationships between sibling views and the
+     parent layout.
+   * 
 
 ##### Photo Fragment
 The photo fragment defines a bottom app bar with a FAB button that saves a picture and two more 
