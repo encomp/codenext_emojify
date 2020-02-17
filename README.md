@@ -57,7 +57,26 @@ a picture.
   </p>
   
 ###### Layout
-  
+The home fragment is defined on the `home_fragment.xml` as follows:
+
+  <p align="center">
+      <img src="/resources/home_fragment.png" data-canonical-src="/images/home_fragment.png" width="535" height="790" />
+  </p>
+
+  * Defines a [Coordinator Layout](https://developer.android.com/reference/androidx/coordinatorlayout/widget/CoordinatorLayout)
+    as the main container to respond to scrolling techniques from Toolbars.
+  * Defines an [AppBar](https://material.io/components/app-bars-top/#usage)
+    to displays information or actions relating to the current screen.
+  * Defines a [Material Tool Bar](https://developer.android.com/reference/com/google/android/material/appbar/MaterialToolbar)
+    that provides the activity title and can declare other interactive
+    items.
+  * Defines an include layout with the value of `home_content.xml`
+  * Defines a [Bottom App Bar](https://material.io/develop/android/components/bottom-app-bar/)
+    to define one main FAB located in the center of the bar.
+  * [Floating Action Button](https://material.io/develop/android/components/floating-action-button/)
+    (FAB) to denote the primary action of the screen in this case to
+    take a photo.
+
   home_fragment.xml | home_content.xml |
   | --------------- | :---------------:|
   | <img src="/resources/home_fragment.png" alt="" data-canonical-src="/images/icon.png" width="535" height="790" /> | <img src="/resources/home_content.png" alt="" data-canonical-src="/images/icon.png" width="535" height="790" /> |
