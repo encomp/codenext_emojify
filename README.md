@@ -41,7 +41,7 @@ is the entry point of an Android application. The activity is launched once the 
 the application icon.
 
  <p align="center">
-     <img src="/resources/icon.png" alt="" data-canonical-src="/images/icon.png" width="176" height="353" />
+     <img src="/resources/launch.gif" alt="" data-canonical-src="/images/launch.gif" width="176" height="353" />
  </p>
 
 #### Screens 
