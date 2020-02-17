@@ -15,18 +15,18 @@ The goal of the is to develop a mobile app that takes a picture of people and us
 * Replace each face with the proper emoji on top of the original photo.
   * Smile: 
    <p align="center">
-     <img src="/app/src/main/res/drawable/smile.png" alt="" data-canonical-src="/images/smile.png" width="144" height="144" />
-     <img src="/app/src/main/res/drawable/right_wink_smile.png" alt="" data-canonical-src="/images/rightwink.png" width="144" height="144" />
-     <img src="/app/src/main/res/drawable/left_wink_smile.png" alt="" data-canonical-src="/images/leftwink.png" width="144" height="144" />
-     <img src="/app/src/main/res/drawable/closed_eye_smile.png" alt="" data-canonical-src="/images/closed_smile.png" width="144" height="144" />
+     <img src="/app/src/main/res/drawable/smile.png" alt="" data-canonical-src="/images/smile.png" width="72" height="72" />
+     <img src="/app/src/main/res/drawable/right_wink_smile.png" alt="" data-canonical-src="/images/rightwink.png" width="72" height="72" />
+     <img src="/app/src/main/res/drawable/left_wink_smile.png" alt="" data-canonical-src="/images/leftwink.png" width="72" height="72" />
+     <img src="/app/src/main/res/drawable/closed_eye_smile.png" alt="" data-canonical-src="/images/closed_smile.png" width="72" height="72" />
    </p>
    
    * Frown: 
    <p align="center">
-     <img src="/app/src/main/res/drawable/frown.png" alt="" data-canonical-src="/images/frown.png" width="144" height="144" />
-     <img src="/app/src/main/res/drawable/right_wink_frown.png" alt="" data-canonical-src="/images/rightwinkfrown.png" width="144" height="144" />
-     <img src="/app/src/main/res/drawable/left_wink_frown.png" alt="" data-canonical-src="/images/leftwinkfrown.png" width="144" height="144" />
-     <img src="/app/src/main/res/drawable/closed_eye_frown.png" alt="" data-canonical-src="/images/closed_frown.png" width="144" height="144" />
+     <img src="/app/src/main/res/drawable/frown.png" alt="" data-canonical-src="/images/frown.png" width="72" height="72" />
+     <img src="/app/src/main/res/drawable/right_wink_frown.png" alt="" data-canonical-src="/images/rightwinkfrown.png" width="72" height="72" />
+     <img src="/app/src/main/res/drawable/left_wink_frown.png" alt="" data-canonical-src="/images/leftwinkfrown.png" width="72" height="72" />
+     <img src="/app/src/main/res/drawable/closed_eye_frown.png" alt="" data-canonical-src="/images/closed_frown.png" width="72" height="72" />
    </p>
 
 ### App overview
