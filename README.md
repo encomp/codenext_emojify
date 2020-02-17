@@ -41,4 +41,16 @@ this activity is launched once the user click on your icon of your application.
  <p align="center">
      <img src="/resources/icon.png" alt="" data-canonical-src="/images/icon.png" width="176" height="353" />
  </p>
- 
+
+#### Screens 
+The application defines two screens or fragments. A fragment defines its own UI and encapsulates its
+own functionality.
+
+##### Home Fragment or Screen
+The home fragment defines a bottom app bar with a single FAB button that triggers the camera to take
+a picture.
+
+  <p align="center">
+      <img src="/resources/home.png" alt="" data-canonical-src="/images/home.png" width="176" height="353" />
+  </p>
+
