@@ -79,7 +79,7 @@ The home fragment is defined on the `home_fragment.xml` as follows:
     (FAB) to denote the primary action of the screen in this case to
     take a photo.
 
-The `home_fragment.xml` is defined as follows:
+The `home_content.xml` is defined as follows:
 
   <p align="center">
       <img src="/resources/home_content.png" data-canonical-src="/images/home_content.png" width="535" height="790" />
@@ -89,7 +89,15 @@ The `home_fragment.xml` is defined as follows:
      that allows [placing](https://developer.android.com/training/constraint-layout)
      components according to relationships between sibling views and the
      parent layout.
-   * 
+   * Defines two horizontal [guidelines](https://developer.android.com/reference/androidx/constraintlayout/widget/Guideline?hl=en)
+     the first one at 35% and the second one at 70% of total height of
+     the screen. These guidelines allow to properly place the
+     [Material Card View](https://material.io/develop/android/components/material-card-view/)
+     and the [Text View](https://developer.android.com/reference/android/widget/TextView).
+   * Defines a [Material Card View](https://material.io/develop/android/components/material-card-view/)
+     that renders a gif image.
+   * Defines a [Text View](https://developer.android.com/reference/android/widget/TextView)
+     that renders the text "Take a Selfie".
 
 ##### Photo Fragment
 The photo fragment defines a bottom app bar with a FAB button that saves a picture and two more 
