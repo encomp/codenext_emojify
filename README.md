@@ -62,8 +62,7 @@ a picture.
   --- | ---
   <p align="center">
     <img src="/resources/home_fragment.png" alt="" data-canonical-src="/images/icon.png" width="176" height="353" />
-  </p>  
-      | 
+  </p>  | 
   <p align="center">
     <img src="/resources/home_content.png" alt="" data-canonical-src="/images/icon.png" width="176" height="353" />
   </p> 
