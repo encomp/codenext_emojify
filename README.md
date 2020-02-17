@@ -35,18 +35,19 @@ concentrate on the Vision api aspect. However, it is important to understand how
 architecture and how it works.
 
 #### Single Activity
-The application has only one activity. The activity is the entry point of an Android application and 
-this activity is launched once the user click on your icon of your application.
+The application has a [single activity](https://www.youtube.com/watch?v=9O1D_Ytk0xg). The activity 
+is the entry point of an Android application. The activity is launched once the user click on 
+the application icon.
 
  <p align="center">
      <img src="/resources/icon.png" alt="" data-canonical-src="/images/icon.png" width="176" height="353" />
  </p>
 
 #### Screens 
-The application defines two screens or fragments. A fragment defines its own UI and encapsulates its
-own functionality.
+The application defines two screens or fragments. A [fragment](https://www.youtube.com/watch?v=k3IT-IJ0J98) 
+defines its own UI and encapsulates its own functionality.
 
-##### Home Fragment or Screen
+##### Home Fragment 
 The home fragment defines a bottom app bar with a single FAB button that triggers the camera to take
 a picture.
 
@@ -54,3 +55,21 @@ a picture.
       <img src="/resources/home.png" alt="" data-canonical-src="/images/home.png" width="176" height="353" />
   </p>
 
+##### Photo Fragment
+The photo fragment defines a bottom app bar with a FAB button that saves a picture and two more 
+buttons one to share a photo the second one to delete it.
+
+  <p align="center">
+      <img src="/resources/photo.png" alt="" data-canonical-src="/images/photo.png" width="176" height="353" />
+  </p>
+  
+ #### Navigation between fragments
+ The application make use of [navigation component](https://www.youtube.com/watch?time_continue=1&v=Y0Cs2MQxyIs&feature=emb_logo). 
+ Navigation refers to the interactions that allow users to navigate across, into, and back out from 
+ the different screens of an application.
+ 
+  <p align="center">
+      <img src="/resources/navigation.png" alt="" data-canonical-src="/images/navigation.png" width="176" height="353" />
+  </p>
+
+ 
