@@ -1,11 +1,12 @@
 # Emojify Me
 
-### Project Synopsis:
-Develop a mobile app that takes a picture of people and using Firebase 
-[Mobile Vision](https://developers.google.com/vision) identify faces and replace it with an emoji.
+### Project Synopsis
+Develop a mobile app that takes a picture of people using Firebase 
+[Mobile Vision](https://developers.google.com/vision) identify all the faces in the photo. Lastly, 
+replace all the faces with the proper emoji.
 
 ### Goals
-* Understand the basics of how artificial intelligence works in particular vision
+* Understand the basics of how artificial intelligence works in particular the field of vision.
 * Make use of the Firbase MLKit Vision Api to build a face detector.
 * Determine how many faces there are on a photo.
 * Identify facial characteristics for each face:
@@ -54,6 +55,18 @@ a picture.
   <p align="center">
       <img src="/resources/home.png" alt="" data-canonical-src="/images/home.png" width="176" height="353" />
   </p>
+  
+###### Layout
+  
+  home_fragment.xml | home_content.xml 
+  --- | ---
+  <p align="center">
+    <img src="/resources/home_fragment.png" alt="" data-canonical-src="/images/icon.png" width="176" height="353" />
+  </p>  
+      | 
+  <p align="center">
+    <img src="/resources/home_content.png" alt="" data-canonical-src="/images/icon.png" width="176" height="353" />
+  </p> 
 
 ##### Photo Fragment
 The photo fragment defines a bottom app bar with a FAB button that saves a picture and two more 
