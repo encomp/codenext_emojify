@@ -69,7 +69,7 @@ buttons one to share a photo the second one to delete it.
  the different screens of an application.
  
   <p align="center">
-      <img src="/resources/navigation.png" alt="" data-canonical-src="/images/navigation.png" width="176" height="353" />
+      <img src="/resources/navigation.png" alt="" data-canonical-src="/images/navigation.png" width="400" height="350" />
   </p>
 
  
