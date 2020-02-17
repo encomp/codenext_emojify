@@ -1,8 +1,8 @@
 # Emojify Me
 
-### Purpose
-The goal of the is to develop a mobile app that takes a picture of people and using Firebase 
-[Mobile Vision](https://developers.google.com/vision) replace a facial expression with an emoji.
+### Project Synopsis:
+Develop a mobile app that takes a picture of people and using Firebase 
+[Mobile Vision](https://developers.google.com/vision) identify faces and replace it with an emoji.
 
 ### Goals
 * Understand the basics of how artificial intelligence works in particular vision
