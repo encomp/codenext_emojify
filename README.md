@@ -60,7 +60,7 @@ a picture.
   
   home_fragment.xml | home_content.xml |
   | --------------- | :---------------:|
-  | <img src="/resources/home_fragment.png" alt="" data-canonical-src="/images/icon.png" width="176" height="353" /> | <img src="/resources/home_content.png" alt="" data-canonical-src="/images/icon.png" width="176" height="353" /> |
+  | <img src="/resources/home_fragment.png" alt="" data-canonical-src="/images/icon.png" width="535" height="790" /> | <img src="/resources/home_content.png" alt="" data-canonical-src="/images/icon.png" width="535" height="790" /> |
 
 ##### Photo Fragment
 The photo fragment defines a bottom app bar with a FAB button that saves a picture and two more 
