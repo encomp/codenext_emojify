@@ -64,9 +64,9 @@ buttons one to share a photo the second one to delete it.
   </p>
   
  #### Navigation between fragments
- The application make use of [navigation component](https://www.youtube.com/watch?time_continue=1&v=Y0Cs2MQxyIs&feature=emb_logo). 
- Navigation refers to the interactions that allow users to navigate across, into, and back out from 
- the different screens of an application.
+ The application make use of [navigation component](https://www.youtube.com/watch?time_continue=1&v=Y0Cs2MQxyIs&feature=emb_logo)
+ to navigate between the screens. Navigation refers to the interactions that allow users to navigate 
+ across, into, and back out from the different screens of an application.
  
   <p align="center">
       <img src="/resources/navigation.png" alt="" data-canonical-src="/images/navigation.png" width="400" height="350" />
