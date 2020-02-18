@@ -45,3 +45,22 @@ the [TAG](#define-a-log-tag) that you defined.
 <p align="center">
     <img src="/resources/logcat.png" data-canonical-src="/images/logcat.png" width="819" height="232" />
 </p>
+
+#### Did not found my log message
+If you could not find your log message open `Logcat` and do the  
+following:
+
+<p align="center">
+    <img src="/resources/logcat_debug.png" data-canonical-src="/images/logcat_debug.png" width="820" height="210" />
+</p>
+
+1. Make sure your selected your device.
+2. Make sure the following package is selected `com.google.codenext.emojify`.
+3. Make sure `Debug` is selected.
+4. Type the following `TAG` name `MainActivityViewModel` on the search box.
+5. You should be able to see the log message on the screen as follow:
+
+`/storage/emulated/0/Android/data/com.google.codenext.emojify/cache/JPEG_20200218_094545_8292899126122382220.jpg`
+
+The above message is the temporary location on where the photo is saved  
+on the phone.
