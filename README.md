@@ -106,7 +106,47 @@ buttons one to share a photo the second one to delete it.
   <p align="center">
       <img src="/resources/photo.png" alt="" data-canonical-src="/images/photo.png" width="176" height="353" />
   </p>
-  
+
+###### Layout
+The home fragment is defined on the `photo_fragment.xml` as follows:
+
+  <p align="center">
+      <img src="/resources/photo_fragment.png" data-canonical-src="/images/photo_fragment.png" width="535" height="790" />
+  </p>
+
+  * Defines a [Coordinator Layout](https://developer.android.com/reference/androidx/coordinatorlayout/widget/CoordinatorLayout)
+    as the main container to respond to scrolling techniques from Toolbars.
+  * Defines an [AppBar](https://material.io/components/app-bars-top/#usage)
+    to displays information or actions relating to the current screen.
+  * Defines a [Material Tool Bar](https://developer.android.com/reference/com/google/android/material/appbar/MaterialToolbar)
+    that provides the activity title and declares an interactive item
+    to close the current fragment and go back to the `home_fragment.xml`.
+  * Defines a [Text View](https://developer.android.com/reference/android/widget/TextView)
+    to display the title of the application in this case "Photo".
+  * Defines an include layout with the value of `photo_content.xml`
+  * Defines a [Bottom App Bar](https://material.io/develop/android/components/bottom-app-bar/)
+    to define one main FAB located in the end of the bar.
+  * [Floating Action Button](https://material.io/develop/android/components/floating-action-button/)
+    (FAB) to denote the primary action of the screen in this case to
+    save the current photo on the phone.
+
+The `photo_content.xml` is defined as follows:
+
+  <p align="center">
+      <img src="/resources/photo_content.png" data-canonical-src="/images/photo_content.png" width="535" height="790" />
+  </p>
+
+   * Defines a [Constraint Layout](https://www.youtube.com/watch?time_continue=3&v=XamMbnzI5vE&feature=emb_logo)
+     that allows [placing](https://developer.android.com/training/constraint-layout)
+     components according to relationships between sibling views and the
+     parent layout.
+   * Defines a horizontal [guidelines](https://developer.android.com/reference/androidx/constraintlayout/widget/Guideline?hl=en)
+     at 50% of total height of the screen. This guidelines allow to properly place the
+     [Material Card View](https://material.io/develop/android/components/material-card-view/).
+   * Defines a [Material Card View](https://material.io/develop/android/components/material-card-view/)
+     that renders the photo that was take with the camera.
+
+
  #### Navigation between fragments
  The application make use of [navigation component](https://www.youtube.com/watch?time_continue=1&v=Y0Cs2MQxyIs&feature=emb_logo)
  to navigate between the screens. Navigation refers to the interactions that allow users to navigate 
