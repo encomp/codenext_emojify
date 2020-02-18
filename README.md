@@ -132,8 +132,8 @@ The snippet above performs the following actions:
 
 * Verify that the user has [permission](https://www.youtube.com/watch?v=55iL41U07KA&list=PLAwxTw4SYaPnMwH5-FNkErnnq_aSy706S&index=72)
   to store files on the phone.
-* In case the user does not have the permission a dialog will be shown
-  asking to grant a permission to store files.
+* In case the user does not have [permissions](https://developer.android.com/guide/topics/permissions/overview)
+  a dialog will be shown asking to grant a permission to store files.
 * However, if the user does have permissions then `launchCameraIntent()`
   will be invoked.
 
