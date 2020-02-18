@@ -104,14 +104,16 @@ The `home_content.xml` is defined as follows:
 This section describes the main aspects of the behavior defined for the
 `home_fragment.xml`.
 
-###### Selfie FAB
+###### Emojify FAB
 
-When the user clicks on the take selfie FAB
+Here is the code snippet that is called when the user taps on the
+emojify FAB:
 
 ```java
   @OnClick(R.id.fab_emojify)
   public void onClickEmojifyFAB() {
     // Check for the external storage permission
+    // Verify if the app has permission to store a photo on the phone
     if (ContextCompat.checkSelfPermission(getContext(), Manifest.permission.WRITE_EXTERNAL_STORAGE)
         != PackageManager.PERMISSION_GRANTED) {
       // If you do not have permission, request it
@@ -125,6 +127,65 @@ When the user clicks on the take selfie FAB
     }
   }
 ```
+
+The snippet above performs the following actions:
+
+* Verify that the user has [permission](https://www.youtube.com/watch?v=55iL41U07KA&list=PLAwxTw4SYaPnMwH5-FNkErnnq_aSy706S&index=72)
+  to store files on the phone.
+* In case the user does not have the permission a dialog will be shown
+  asking to grant a permission to store files.
+* However, if the user does have permissions then `launchCameraIntent()`
+  will be invoked.
+
+The goal of method `launchCameraIntent()` is to launch an [intent](https://developer.android.com/guide/components/intents-filters)  
+that allows the user to take a photo.
+
+```java
+  /** Creates a temporary file in which a picture will be store. */
+  private void launchCameraIntent() {
+    // Create the capture image intent
+    Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+    // Ensure that there's a camera activity to handle the intent
+    if (takePictureIntent.resolveActivity(getActivity().getPackageManager()) != null) {
+      // Create the temporary File where the photo should go
+      File photoFile = null;
+      try {
+        photoFile = BitmapUtils.createTempImageFile(getContext());
+      } catch (IOException ex) {
+        // Error occurred while creating the File
+        ex.printStackTrace();
+      }
+      // Continue only if the File was successfully created
+      if (photoFile != null) {
+        // Get the path of the temporary file
+        viewModel.setPhotoPath(photoFile.getAbsolutePath());
+        // Get the content URI for the image file
+        Uri photoURI = FileProvider.getUriForFile(getContext(), FILE_PROVIDER_AUTHORITY, photoFile);
+        // Add the URI so the camera can store the image
+        takePictureIntent.putExtra(MediaStore.EXTRA_OUTPUT, photoURI);
+        // Launch the camera activity
+        startActivityForResult(takePictureIntent, REQUEST_IMAGE_CAPTURE);
+      }
+    }
+  }
+```
+The snippet above performs the following actions:
+
+* Create an intent that allows the user to take a photo called
+  `takePictureIntent`.
+* Validates that there is an app for taking photos installed on the
+  phone.
+* Creates a temporary file in where the photo will be stored `photoURI`.
+* On the intent `takePictureIntent` specify as an extra where the
+  temporary file on where the photo should be store `photoURI`.
+* Launch the [intent](https://www.youtube.com/watch?v=95AARxHoupA&list=PLAwxTw4SYaPnMwH5-FNkErnnq_aSy706S&index=106)
+  `startActivityForResult(takePictureIntent, REQUEST_IMAGE_CAPTURE)`.
+
+The call of `startActivityForResult()` resolves the
+intent to an app that can handle the intent and starts its corresponding
+Activity. However, If there is more than one app that can handle the
+intent, Android presents the user with a dialog to pick which app to
+use.
 
 ##### Photo Fragment
 The photo fragment defines a bottom app bar with a FAB button that saves a picture and two more 
