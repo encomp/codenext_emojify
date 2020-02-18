@@ -10,7 +10,7 @@ You can refer to the class [MainActivityViewModel](https://github.com/encomp/cod
 for a sample on how to define your `TAG`.
 
 #### Add the code that detects the number of faces in a given bitmap.
-Go to the vision [tutorial](https://developers.google.com/vision/android/detect-faces-tutorial)
+Go to the vision [tutorial](https://developers.google.com/vision/android/detect-faces-tutorial#creating_the_face_detector)
 and understand how to define and build a Face Detector.
 
 #### Log the number of faces found on the bitmap.
