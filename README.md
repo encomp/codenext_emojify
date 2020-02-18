@@ -46,7 +46,7 @@ the [TAG](#define-a-log-tag) that you defined.
     <img src="/resources/logcat.png" data-canonical-src="/images/logcat.png" width="819" height="232" />
 </p>
 
-#### Did not found my log message
+#### Did not found the log message
 If you could not find your log message open `Logcat` and do the  
 following:
 
