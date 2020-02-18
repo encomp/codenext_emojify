@@ -429,5 +429,19 @@ destination to another is done via the following method:
 Navigation.findNavController(View)
 ```
 
+* To Navigate from `photo_fragment.xml` to `home_fragment.xml`  is
+accomplished as follow:
+
+```java
 Navigation.findNavController(getView())
                 .navigate(R.id.action_photoFragment_to_mainFragment));
+```
+
+* To Navigate from `home_fragment.xml` to `photo_fragment.xml` is
+accomplished as follow:
+
+```java
+Navigation.findNavController(getView())
+                .navigate(R.id.action_mainFragment_to_photoFragment);
+```
+
