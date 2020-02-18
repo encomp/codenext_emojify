@@ -99,6 +99,33 @@ The `home_content.xml` is defined as follows:
    * Defines a [Text View](https://developer.android.com/reference/android/widget/TextView)
      that renders the text "Take a Selfie".
 
+##### HomeFragment.java
+
+This section describes the main aspects of the behavior defined for the
+`home_fragment.xml`.
+
+###### Selfie FAB
+
+When the user clicks on the take selfie FAB
+
+```java
+  @OnClick(R.id.fab_emojify)
+  public void onClickEmojifyFAB() {
+    // Check for the external storage permission
+    if (ContextCompat.checkSelfPermission(getContext(), Manifest.permission.WRITE_EXTERNAL_STORAGE)
+        != PackageManager.PERMISSION_GRANTED) {
+      // If you do not have permission, request it
+      ActivityCompat.requestPermissions(
+          getActivity(),
+          new String[] {Manifest.permission.WRITE_EXTERNAL_STORAGE},
+          REQUEST_STORAGE_PERMISSION);
+    } else {
+      // Launch the camera if the permission exists
+      launchCameraIntent();
+    }
+  }
+```
+
 ##### Photo Fragment
 The photo fragment defines a bottom app bar with a FAB button that saves a picture and two more 
 buttons one to share a photo the second one to delete it.
