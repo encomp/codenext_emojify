@@ -189,7 +189,7 @@ use.
 
 Lastly, once the picture has been taken and temporarily saved. The camera
 intent will be completed and Android will call the life cycle method
-`onActivityResult` method will be called:
+`onActivityResult`:
 
 ```java
   @Override
