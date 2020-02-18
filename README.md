@@ -334,7 +334,22 @@ The snippet above performs the following actions:
 
 * Deletes the temporary file where the photo is stored.
 
+###### MaterialToolbar Navigation OnClickListener
 
+Here is the code snippet that is called when the user taps on the
+Material Tool Bar Navigation:
+
+```java
+   // Specifies the close navigation listener to go back to the home fragment
+   topToolbar.setNavigationOnClickListener(
+      v ->
+           Navigation.findNavController(getView())
+                .navigate(R.id.action_photoFragment_to_mainFragment));
+```
+
+The snippet above performs the following actions:
+
+* Navigates back to the `home_fragment.xml`.
 
  #### Navigation between fragments
  The application make use of [navigation component](https://www.youtube.com/watch?time_continue=1&v=Y0Cs2MQxyIs&feature=emb_logo)
