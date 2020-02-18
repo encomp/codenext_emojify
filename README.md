@@ -289,6 +289,51 @@ save FAB:
   }
 ```
 
+The snippet above performs the following actions:
+
+* Retrieves the photo from the `ViewModel` and saved it on the phones
+  gallery.
+* Upon successfully storing the photo the path is stored on the
+  `ViewModel`.
+
+###### Share Action Menu
+
+Here is the code snippet that is called when the user taps on the
+share action menu:
+
+```java
+  /** OnClick method share action menu. */
+  private void onShareMenuSelected() {
+    onClickSaveFAB();
+    // Share the image
+    BitmapUtils.shareImage(getContext(), viewModel.getPhotoPath());
+  }
+```
+
+The snippet above performs the following actions:
+
+* Calls the `onClickSaveFAB` to save the photo.
+* Lastly, a share intent is trigger to allow the user share a photo
+  through a list of different apps such as Google Photos, Google Drive
+  to name a few.
+
+###### Delete Action Menu
+
+Here is the code snippet that is called when the user taps on the
+delete action menu:
+
+```java
+  /** OnClick method delete action menu. */
+  private void onDeleteMenuSelected() {
+    // Delete the temporary image file
+    BitmapUtils.deleteImageFile(getContext(), viewModel.getPhotoPath());
+  }
+```
+
+The snippet above performs the following actions:
+
+* Deletes the temporary file where the photo is stored.
+
 
 
  #### Navigation between fragments
