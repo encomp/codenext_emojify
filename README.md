@@ -187,6 +187,37 @@ Activity. However, If there is more than one app that can handle the
 intent, Android presents the user with a dialog to pick which app to
 use.
 
+Lastly, once the picture has been taken and temporarily saved. The camera
+intent will be completed and Android will call the life cycle method
+`onActivityResult` method will be called:
+
+```java
+  @Override
+  public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+    super.onActivityResult(requestCode, resultCode, data);
+    // If the image capture activity was called and was successful
+    if (requestCode == REQUEST_IMAGE_CAPTURE && resultCode == Activity.RESULT_OK) {
+      // Resample the saved image to fit the ImageView
+      Bitmap photo = BitmapUtils.resamplePic(getContext(), viewModel.getPhotoPath());
+      // Save the photo on the view model
+      viewModel.setPhoto(photo);
+      // Navigate to the Photo fragment to see the picture taken
+      Navigation.findNavController(getView()).navigate(R.id.action_mainFragment_to_photoFragment);
+    } else {
+      // Otherwise, delete the temporary image file
+      BitmapUtils.deleteImageFile(getContext(), viewModel.getPhotoPath());
+    }
+  }
+```
+
+The snippet above performs the following actions:
+
+* if intent completed successfully the `requestCode` will be `RESULT_OK`.
+  And the temporary file will be stored on the `ViewModel`. Lastly, the
+  navigation component will render the `photo_fragment.xml`.
+* However, if the intent was not successful the temporary file will be
+  deleted.
+
 ##### Photo Fragment
 The photo fragment defines a bottom app bar with a FAB button that saves a picture and two more 
 buttons one to share a photo the second one to delete it.
