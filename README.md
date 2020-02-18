@@ -349,7 +349,8 @@ Material Tool Bar Navigation:
 
 The snippet above performs the following actions:
 
-* Navigates back to the `home_fragment.xml`.
+* Closes the `photo_fragment.xml` and navigates back to the
+  `home_fragment.xml`.
 
  #### Navigation between fragments
  The application make use of [navigation component](https://www.youtube.com/watch?time_continue=1&v=Y0Cs2MQxyIs&feature=emb_logo)
