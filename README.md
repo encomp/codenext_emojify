@@ -108,7 +108,7 @@ buttons one to share a photo the second one to delete it.
   </p>
 
 ###### Layout
-The home fragment is defined on the `photo_fragment.xml` as follows:
+The photo fragment is defined on the `photo_fragment.xml` as follows:
 
   <p align="center">
       <img src="/resources/photo_fragment.png" data-canonical-src="/images/photo_fragment.png" width="535" height="790" />
