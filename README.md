@@ -140,6 +140,8 @@ The snippet above performs the following actions:
 The goal of method `launchCameraIntent()` is to launch an [intent](https://developer.android.com/guide/components/intents-filters)  
 that allows the user to take a photo.
 
+###### launchCameraIntent
+
 ```java
   /** Creates a temporary file in which a picture will be store. */
   private void launchCameraIntent() {
@@ -186,6 +188,8 @@ intent to an app that can handle the intent and starts its corresponding
 Activity. However, If there is more than one app that can handle the
 intent, Android presents the user with a dialog to pick which app to
 use.
+
+###### onActivityResult
 
 Lastly, once the picture has been taken and temporarily saved. The camera
 intent will be completed and Android will call the life cycle method
@@ -264,6 +268,27 @@ The `photo_content.xml` is defined as follows:
      [Material Card View](https://material.io/develop/android/components/material-card-view/).
    * Defines a [Material Card View](https://material.io/develop/android/components/material-card-view/)
      that renders the photo that was take with the camera.
+
+##### PhotoFragment.java
+
+This section describes the main aspects of the behavior defined for the
+`photo_fragment.xml`.
+
+###### Save FAB
+
+Here is the code snippet that is called when the user taps on the
+save FAB:
+
+```java
+  /** OnClick method for the save button. */
+  @OnClick(R.id.fab_save)
+  public void onClickSaveFAB() {
+    // Save the image
+    String photoPath = BitmapUtils.saveImage(getContext(), viewModel.getPhoto());
+    viewModel.setPhotoPath(photoPath);
+  }
+```
+
 
 
  #### Navigation between fragments
