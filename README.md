@@ -29,7 +29,7 @@ To test the photo should be taken with the phone on `landscape` not
 `portrait`. Otherwise the number of faces will be zero.
 
 <p align="center">
-    <img src="/resources/photo_demo.png" data-canonical-src="/images/photo_demo.png" width="176" height="353" />
+    <img src="/resources/photo_demo.png" data-canonical-src="/images/photo_demo.png" width="353" height="176" />
 </p>
 
 #### Verify your log
@@ -37,5 +37,5 @@ Once the app is deployed and if your code is correct your log message
 should appear on `Logcat`.
 
 <p align="center">
-    <img src="/resources/logcat.png" data-canonical-src="/images/logcat.png" width="353" height="176" />
+    <img src="/resources/logcat.png" data-canonical-src="/images/logcat.png" width="819" height="232" />
 </p>
