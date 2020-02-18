@@ -420,7 +420,7 @@ are defined on the `nav_graph.xml` as follows:
 
 ##### Navigate to a destination
 
-[Navigating](https://developer.android.com/guide/navigation/navigation-getting-started#navigate)  
+[Navigating](https://developer.android.com/guide/navigation/navigation-getting-started#navigate)
 to a destination is done using a NavController, an object that manages
 app navigation within a NavHost. Therefore, to navigate from one
 destination to another is done via the following method:
