@@ -361,4 +361,73 @@ The snippet above performs the following actions:
       <img src="/resources/navigation.png" alt="" data-canonical-src="/images/navigation.png" width="400" height="350" />
   </p>
 
- 
+
+##### Main Activity Layout
+
+One of the core parts of the Navigation component is the [navigation
+host](https://developer.android.com/guide/navigation/navigation-getting-started#add-navhostfragment).  
+The navigation host is an empty container where destinations are swapped
+in and out as a user navigates through your app.
+
+```xml
+<androidx.fragment.app.FragmentContainerView
+        android:id="@+id/nav_host_fragment"
+        android:name="androidx.navigation.fragment.NavHostFragment"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:defaultNavHost="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+
+        app:layout_constraintTop_toTopOf="parent"
+        app:navGraph="@navigation/nav_graph" />
+```
+
+##### Add destinations to the navigation graph
+
+The [destinations](https://developer.android.com/guide/navigation/navigation-getting-started#add-destinations)
+are defined on the `nav_graph.xml` as follows:
+
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/mainFragment">
+
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.google.codenext.emojify.ui.HomeFragment"
+        android:label="main_fragment"
+        tools:layout="@layout/home_fragment" >
+        <action
+            android:id="@+id/action_mainFragment_to_photoFragment"
+            app:destination="@id/photoFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/photoFragment"
+        android:name="com.google.codenext.emojify.ui.PhotoFragment"
+        android:label="photo_fragment"
+        tools:layout="@layout/photo_fragment" >
+        <action
+            android:id="@+id/action_photoFragment_to_mainFragment"
+            app:destination="@id/mainFragment" />
+    </fragment>
+</navigation>
+```
+
+##### Navigate to a destination
+
+[Navigating](https://developer.android.com/guide/navigation/navigation-getting-started#navigate)  
+to a destination is done using a NavController, an object that manages
+app navigation within a NavHost. Therefore, to navigate from one
+destination to another is done via the following method:
+
+```java
+Navigation.findNavController(View)
+```
+
+Navigation.findNavController(getView())
+                .navigate(R.id.action_photoFragment_to_mainFragment));
