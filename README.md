@@ -16,10 +16,13 @@ and understand how to define and build a Face Detector.
 #### Log the number of faces found on the bitmap.
 * Visit the vision tutorial to understand how to detect all on a `Frame`
   [faces](https://developers.google.com/vision/android/detect-faces-tutorial#detecting_faces_and_facial_landmarks).
-* Lastly, log the number of faces using Timber.
+* Lastly, log the number of faces using Timber. You can refer to the
+  class [MainActivityViewModel](https://github.com/encomp/codenext_emojify/blob/01-branch/app/src/main/java/com/google/codenext/emojify/viewmodel/MainActivityViewModel.java#L36)
+  for a sample on how to log this information.
 
 #### If there are no faces on a bitmap show a Toast message.
-If the `SparseArray` size is equal to zero display a [Toast](https://developer.android.com/guide/topics/ui/notifiers/toasts)
+If the [SparseArray](https://developer.android.com/reference/android/util/SparseArray)
+size is equal to zero display a [Toast](https://developer.android.com/guide/topics/ui/notifiers/toasts)
 message.
 
 #### Call detect face to log the emoji information.
