@@ -445,3 +445,89 @@ Navigation.findNavController(getView())
                 .navigate(R.id.action_mainFragment_to_photoFragment);
 ```
 
+#### ViewModel that stores information
+
+A [ViewModel](https://www.youtube.com/watch?v=5qlIPTDE274) is a class
+designed to store and manage UI-related data in a lifecycle conscious
+way. The ViewModel class allows data to survive configuration changes
+such as screen rotations.
+
+##### MainActivityViewModel
+
+The `ViewModel` allows to [share](https://developer.android.com/topic/libraries/architecture/viewmodel#implement)
+the photo and the location where the photo is stored on the phone to
+allow the fragments communicated among them.
+
+```java
+public class MainActivityViewModel extends ViewModel {
+
+  private static final String TAG = "MainActivityViewModel";
+  private String photoPath;
+  private Bitmap photo;
+
+  /** Provides the file path of the where a photo is stored on the device. */
+  public String getPhotoPath() {
+    return photoPath;
+  }
+
+  /** Stores the file path of where a given photo is stored on the device. */
+  public void setPhotoPath(String photoPath) {
+    Timber.tag(TAG).d(photoPath);
+    this.photoPath = photoPath;
+  }
+
+  /** Provides a {@link Bitmap} JPG photo. */
+  public Bitmap getPhoto() {
+    return photo;
+  }
+
+  /** Stores a JPG photo as a {@link Bitmap} */
+  public void setPhoto(Bitmap photo) {
+    this.photo = photo;
+  }
+}
+```
+
+##### Share data between fragments
+
+It's very common that two or more fragments in an activity need to
+[communicate](https://developer.android.com/topic/libraries/architecture/viewmodel#sharing)
+with each other. For our app we need to share the photo taken with the
+camera as well as its location on where is stored on the phone.
+
+To accomplish this these fragments share a `ViewModel` using
+`MainActivity` scope to handle this communication.
+
+* This is defined in the HomeFragment as follows:
+
+```java
+/** Home fragment initiates the camera that captures a selfie in landscape. */
+public class HomeFragment extends Fragment {
+
+  private MainActivityViewModel viewModel;
+    
+  @Override
+  public void onCreate(@Nullable Bundle savedInstanceState) {
+    super.onCreate(savedInstanceState);
+   
+    viewModel = ViewModelProviders.of(getActivity()).get(MainActivityViewModel.class);
+  }
+  ...
+```
+
+* This is defined in the PhotoFragment as follows:
+
+```java
+/** Photo fragment that allows to emojify a selfie as well as allow to save it, share it or discard it. */
+public class PhotoFragment extends Fragment {
+
+  private MainActivityViewModel viewModel;
+
+  @Override
+  public void onCreate(Bundle savedInstanceState) {
+    super.onCreate(savedInstanceState);
+    
+    viewModel = ViewModelProviders.of(getActivity()).get(MainActivityViewModel.class);
+  }
+  ...
+```
