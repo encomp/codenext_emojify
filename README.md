@@ -1,6 +1,6 @@
 # Emojify Me
 
-### Exercise One
+### Exercise One: Add the Vision dependency
 
 The goal is to look for the Mobile Vision dependency that needs to be
 added to our `build.gradle` file.
