@@ -1,8 +1,7 @@
 # Emojify Me
 
-### Exercise Two Detect Faces
-The goal is to look for the Mobile Vision dependency that needs to be
-added to our `build.gradle` file.
+### Exercise Two: Detect Faces
+The goal is to `log` the number of faces found on given photo.
 
 #### Define a log TAG
 Define a constant on the class that will be used to log messages using
@@ -25,6 +24,10 @@ message.
 Finally on the `HomeFragment.java` use the `Emojifier.java` and invoke
 the method `detectFaces()`.
 
-### Lastly do not forget to test on you phone.
+### Lastly do not forget to test on your phone.
 To test the photo should be taken with the phone on `landscape` not
-`portrait`. Otherwise the number of faces will be zero every time.
+`portrait`. Otherwise the number of faces will be zero.
+
+#### Verify your log
+Once the app is deployed and if your code is correct your log message
+should appear on `Logcat`.
