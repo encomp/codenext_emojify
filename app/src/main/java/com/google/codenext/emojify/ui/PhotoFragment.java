@@ -102,7 +102,8 @@ public class PhotoFragment extends Fragment {
   @OnClick(R.id.fab_save)
   public void onClickSaveFAB() {
     // Save the image
-    BitmapUtils.saveImage(getContext(), viewModel.getPhoto());
+    String photoPath = BitmapUtils.saveImage(getContext(), viewModel.getPhoto());
+    viewModel.setPhotoPath(photoPath);
   }
 
   private void onShareMenuSelected() {
