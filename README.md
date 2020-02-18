@@ -212,7 +212,7 @@ intent will be completed and Android will call the life cycle method
 
 The snippet above performs the following actions:
 
-* if intent completed successfully the `requestCode` will be `RESULT_OK`.
+* If intent completed successfully the `requestCode` will be `RESULT_OK`.
   And the temporary file will be stored on the `ViewModel`. Lastly, the
   navigation component will render the `photo_fragment.xml`.
 * However, if the intent was not successful the temporary file will be
