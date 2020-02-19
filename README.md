@@ -1,11 +1,10 @@
 # Emojify Me
 
 ### Exercise Four: Exercise Match the Face to an Emoji
-The goal is to rename the method called
-`getClassifications()` to `whichEmoji()`. The aim is to adapt its
-current functionality to determine the proper `Emoji` that should be used
-for a given face. The method determines the proper `Emoji` using the
-following three variables:
+The goal is to repurpose the method called `getClassifications()`. And
+adapt its current functionality to determine the proper `Emoji` that
+should be used for a given face. The method determines the proper
+`Emoji` using the following three variables:
 
 * Smiling
 * Left eye closed
