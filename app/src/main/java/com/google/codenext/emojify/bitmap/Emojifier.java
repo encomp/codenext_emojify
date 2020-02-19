@@ -93,6 +93,8 @@ public final class Emojifier {
 
     // TODO (4): Create an if/else system that selects the appropriate emoji enum type based on the
     // above booleans and log the result.
+
+    // TODO (5): Log the emoji that was determined from the prior step.
   }
 
   // TODO (1): Create an enum class called Emoji that contains all the possible emoji you can make
