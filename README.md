@@ -2,7 +2,12 @@
 
 ### Exercise Five: Draw Emojis over Faces
 The goal is to finish the app. To finish the app we need to draw an
-emoji on each face on the photo. These will require a bit of work.
+emoji on each face on the photo. These will require a bit of work in the
+following methods:
+
+* `whichEmoji()`
+* `addBitmapToFace()`
+* `detectFaces()`
 
 #### Refactor of the method `whichEmoji()`
 1. Change the return type from [`void`](https://github.com/encomp/codenext_emojify/blob/06-branch/app/src/main/java/com/google/codenext/emojify/bitmap/Emojifier.java#L101)
@@ -123,3 +128,14 @@ and assigning the result to resultBitmap.
 Save the result from `detectFacesandOverlayEmoji(...)` on the
 [photo](https://github.com/encomp/codenext_emojify/blob/06-branch/app/src/main/java/com/google/codenext/emojify/ui/HomeFragment.java#L137)
 variable.
+
+### Lastly do not forget to test on your phone.
+To test the photo should be taken with the phone on `landscape` not
+`portrait`. Otherwise the number of faces will be zero.
+
+<p align="center">
+    <img src="/resources/photo_demo.png" data-canonical-src="/images/photo_demo.png" width="353" height="176" />
+</p>
+
+If your code is correct you should be able to see the emoji on your
+faces.
