@@ -2,6 +2,7 @@ package com.google.codenext.emojify.bitmap;
 
 import android.content.Context;
 import android.graphics.Bitmap;
+import android.graphics.Canvas;
 import android.util.SparseArray;
 import android.widget.Toast;
 
@@ -162,6 +163,8 @@ public final class Emojifier {
     // TODO (2.3): Determine the emoji position so it best lines up with the face.
 
     // TODO (2.4): Create the canvas and draw the bitmaps to it.
+    Canvas canvas = new Canvas(resultBitmap);
+    canvas.drawBitmap(backgroundBitmap, 0, 0, null);
 
     return resultBitmap;
   }
