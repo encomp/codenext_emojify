@@ -5,6 +5,12 @@
 The goal is to look for the Mobile Vision dependency that needs to be
 added to our `build.gradle` file.
 
+##### [What is computer vision](https://www.youtube.com/watch?v=_99V1rUNFa4&feature=emb_logo)?
+Computer Vision is the science and technology for building artificial
+systems that obtain information from images or multi-dimensional data.
+However, a significant part of AI deals with planning for system/machine
+which can perform mechanical actions.
+
 #### Add Mobile Vision Library dependency
 Visit the Android Vision [GitHub](https://github.com/googlesamples/android-vision)
 and look for the setup of the vision library.
