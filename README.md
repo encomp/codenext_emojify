@@ -55,7 +55,8 @@ the given [Face](https://developers.google.com/android/reference/com/google/andr
 
 4. Create the canvas and draw the bitmaps to it. Use the method
 [drawBitmap](https://developer.android.com/reference/android/graphics/Canvas#drawBitmap(android.graphics.Bitmap,%20android.graphics.Rect,%20android.graphics.RectF,%20android.graphics.Paint))
-to draw the `emojiBitmap` on top of the face.
+to draw the `emojiBitmap` on top of the face using the coordinates
+`emojiPositionX` and `emojiPositionY`.
 
 #### Rename the method `detectFaces()`
 1. Change the name of the mehtod [detectFaces()](https://github.com/encomp/codenext_emojify/blob/06-branch/app/src/main/java/com/google/codenext/emojify/bitmap/Emojifier.java#L34)
