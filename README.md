@@ -102,12 +102,13 @@ to the following name `detectFacesAndOverlayEmoji()`.
           ...    
       }        
       ```
-   3. All the emojis images are under the res folder called
+   2. All the emojis images are under the res folder called
       [drawable](https://github.com/encomp/codenext_emojify/tree/06-branch/app/src/main/res/drawable).
-   4. You need to convert each Emoji image to a
+   3. You need to convert each Emoji image to a
       [Bitmap](https://developer.android.com/reference/android/graphics/Bitmap).
       This can be accomplish using the class
       [BitmapFactory](https://developer.android.com/reference/android/graphics/BitmapFactory#decodeResource(android.content.res.Resources,%20int,%20android.graphics.BitmapFactory.Options)).
+
       ```java
       BitmapFactory.decodeResource(context.getResources(), R.drawable.frown);
       ```
