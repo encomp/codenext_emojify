@@ -40,14 +40,22 @@ the given [Face](https://developers.google.com/android/reference/com/google/andr
    1. To determine the coordinate X (`emojiPositionX`) can be calculated
    as follows:
 
-      ([`face`<a href="https://developer.android.com/reference/android/graphics/PointF#x"><b> X </b></a>](https://developers.google.com/android/reference/com/google/android/gms/vision/face/Face#public-pointf-getposition-)
+      ([`face`<a href="https://developer.android.com/reference/android/graphics/PointF#x"><b> coordinate X </b></a>](https://developers.google.com/android/reference/com/google/android/gms/vision/face/Face#public-pointf-getposition-)
       `+` ([Width of the `face`](https://developers.google.com/android/reference/com/google/android/gms/vision/face/Face#public-float-getwidth-)
       / 2)) - [Width of `emojiBitmap`](https://developer.android.com/reference/android/graphics/Bitmap#getWidth())
       / 2
 
-   2.
+   2.  To determine the coordinate Y (`emojiPositionY`) can be calculated
+   as follows:
 
-5. d
+       ([`face`<a href="https://developer.android.com/reference/android/graphics/PointF#y"><b> coordinate Y </b></a>](https://developers.google.com/android/reference/com/google/android/gms/vision/face/Face#public-pointf-getposition-)
+      `+` ([Height of the `face`](https://developers.google.com/android/reference/com/google/android/gms/vision/face/Face#public-float-getheight-)
+      / 2)) - [Height of `emojiBitmap`](https://developer.android.com/reference/android/graphics/Bitmap#getHeight())
+      / 3
+
+4. Create the canvas and draw the bitmaps to it. Use the method
+[drawBitmap](https://developer.android.com/reference/android/graphics/Canvas#drawBitmap(android.graphics.Bitmap,%20android.graphics.Rect,%20android.graphics.RectF,%20android.graphics.Paint))
+to draw the `emojiBitmap` on top of the face.
 
 #### Rename the method `detectFaces()`
 1. Change the name of the mehtod [detectFaces()](https://github.com/encomp/codenext_emojify/blob/06-branch/app/src/main/java/com/google/codenext/emojify/bitmap/Emojifier.java#L34)
