@@ -4,7 +4,7 @@
 
 A computer vision [pipeline](https://www.youtube.com/watch?v=64hFcqhnNow&feature=emb_logo)
 defines a series of steps that most computer vision applications will go
-through. In general it starts off by acquiring images and meta data,
+through. In general it starts off by acquiring images and meta data (labels),
 then processing that meta data, performing some analysis and recognition
 of patterns steps, then finally performing an action.
 
