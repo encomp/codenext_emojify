@@ -22,7 +22,7 @@ public final class Emojifier {
 
   private static final float EMOJI_SCALE_FACTOR = .9f;
   // TODO (3b): Use these threshold constants to define 3 variables: smiling, left eye closed, right
-  // eye closed.
+  //  eye closed.
   private static final double SMILING_PROB_THRESHOLD = .15;
   private static final double EYE_OPEN_PROB_THRESHOLD = .5;
 
@@ -89,15 +89,15 @@ public final class Emojifier {
     Timber.tag(TAG).d("RightEyeOpen:" + face.getIsSmilingProbability());
 
     // TODO (3a): Create 3 boolean variables to track the state of the facial expression based on
-    // the threshold constants: smiling, left eye closed, right eye closed.
+    //  the threshold constants: smiling, left eye closed, right eye closed.
 
     // TODO (4): Create an if/else system that selects the appropriate emoji enum type based on the
-    // above booleans and log the result.
+    //  above booleans and log the result.
 
     // TODO (5): Log the emoji that was determined from the prior step.
   }
 
   // TODO (1): Create an enum class called Emoji that contains all the possible emoji you can make
-  // (smile, frown, left wink smile, right wink smile, left wink frown, right wink frown,
-  // closed eye smile, close eye frown).
+  //  (smile, frown, left wink smile, right wink smile, left wink frown, right wink frown,
+  //  closed eye smile, close eye frown).
 }
