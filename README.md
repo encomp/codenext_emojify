@@ -31,6 +31,36 @@ to the following name `detectFacesAndOverlayEmoji()`.
    called `emojiBitmap` to hold the appropriate Emoji as a bitmap.
 4. Create a variable of type [Emoji](https://github.com/encomp/codenext_emojify/blob/06-branch/app/src/main/java/com/google/codenext/emojify/bitmap/Emojifier.java#L183)
    called `emoji` to hold the result from the call of the method
-   [whichEmoji](https://github.com/encomp/codenext_emojify/blob/06-branch/app/src/main/java/com/google/codenext/emojify/bitmap/Emojifier.java#L101).
-5. 
+   [whichEmoji()](https://github.com/encomp/codenext_emojify/blob/06-branch/app/src/main/java/com/google/codenext/emojify/bitmap/Emojifier.java#L101).
+5. Create a `switch` statement on the result of the
+   [whichEmoji()](https://github.com/encomp/codenext_emojify/blob/06-branch/app/src/main/java/com/google/codenext/emojify/bitmap/Emojifier.java#L101)
+   call, and assign the proper emoji bitmap to the variable `emojiBitmap`.
+
+   **Hints**
+
+   1. You need to build a [switch](https://github.com/encomp/codenext_emojify/blob/06-branch/app/src/main/java/com/google/codenext/emojify/ui/PhotoFragment.java#L81)
+      statement as follows:
+      ```java
+      switch (emoji) {
+          case FROWN:
+              ....
+            break;
+          
+          case SMILE:
+              ....
+            break;
+          
+          ...    
+      }        
+      ```
+   2. All the emojis images are under the res folder called
+      [drawable](https://github.com/encomp/codenext_emojify/tree/06-branch/app/src/main/res/drawable).
+   3. You need to convert each Emoji image to a
+      [Bitmap](https://developer.android.com/reference/android/graphics/Bitmap).
+      This can be accomplish using the class
+      [BitmapFactory](https://developer.android.com/reference/android/graphics/BitmapFactory#decodeResource(android.content.res.Resources,%20int,%20android.graphics.BitmapFactory.Options)).
+      ```java
+      BitmapFactory.decodeResource(context.getResources(), R.drawable.frown);
+      ```
+6. Finally add the emojiBitmap to a face.
 
