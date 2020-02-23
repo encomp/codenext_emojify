@@ -79,7 +79,7 @@ public final class Emojifier {
 
     // Release the detector to free up native resources that are no longer needed.
     detector.release();
-    // TODO (3.6): Return the resultBitmap
+    // TODO (3.7): Return the resultBitmap
   }
 
   // TODO (1): Refactor the method whichEmoji()
