@@ -132,7 +132,7 @@ public class HomeFragment extends Fragment {
     if (requestCode == REQUEST_IMAGE_CAPTURE && resultCode == Activity.RESULT_OK) {
       // Resample the saved image to fit the ImageView
       Bitmap photo = BitmapUtils.resamplePic(getContext(), viewModel.getPhotoPath());
-      // TODO (10): Save the result from detecFaces(...) on the photo variable.
+      // TODO (4): Save the result from detecFaces(...) on the photo variable.
       // Detect faces
       Emojifier.detectFaces(getContext(), photo);
       // Save the photo on the view model
