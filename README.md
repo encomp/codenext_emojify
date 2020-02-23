@@ -29,5 +29,8 @@ to the following name `detectFacesAndOverlayEmoji()`.
    method.
 3. Create a variable of type [Bitmap](https://developer.android.com/reference/android/graphics/Bitmap)
    called `emojiBitmap` to hold the appropriate Emoji as a bitmap.
-4. 
+4. Create a variable of type [Emoji](https://github.com/encomp/codenext_emojify/blob/06-branch/app/src/main/java/com/google/codenext/emojify/bitmap/Emojifier.java#L183)
+   called `emoji` to hold the result from the call of the method
+   [whichEmoji](https://github.com/encomp/codenext_emojify/blob/06-branch/app/src/main/java/com/google/codenext/emojify/bitmap/Emojifier.java#L101).
+5. 
 
