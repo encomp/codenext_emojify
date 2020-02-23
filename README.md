@@ -11,17 +11,23 @@ emoji on each face on the photo. These will require a bit of work.
    statement at the end of the method.
 
 #### Rename the method `detectFaces()`
-Change the name of the mehtod [detectFaces()](https://github.com/encomp/codenext_emojify/blob/06-branch/app/src/main/java/com/google/codenext/emojify/bitmap/Emojifier.java#L33)
+1. Change the name of the mehtod [detectFaces()](https://github.com/encomp/codenext_emojify/blob/06-branch/app/src/main/java/com/google/codenext/emojify/bitmap/Emojifier.java#L33)
 to the following name `detectFacesAndOverlayEmoji()`.
 
-You could do it using the Refactor :
-
-1. Select the method `detectFaces()` perform a Right click.
-2. From the drop down menu select `Refactor`.
-3. From the drop down menu select `Rename`.
-4. Finally type the name `detectFacesAndOverlayEmoji()` and hit Enter.
-
-<p align="center">
-    <img src="/resources/refactor_method.png" data-canonical-src="/images/refactor_method.png" width="483" height="479" />
-</p>
+   You could do it using the Refactor :
+     1. Select the method `detectFaces()` perform a Right click.
+     2. From the drop down menu select `Refactor`.
+     3. From the drop down menu select `Rename`.
+     4. Finally type the name `detectFacesAndOverlayEmoji()` and hit Enter.
+   <p align="center">
+       <img src="/resources/refactor_method.png" data-canonical-src="/images/refactor_method.png" width="483" height="479" />
+   </p>
+2. Create a variable of type [Bitmap](https://developer.android.com/reference/android/graphics/Bitmap).
+   Define a new variable called `resultBitmap` and initialize it to the
+   original `picture` bitmap passed into the
+   [detectFacesAndOverlayEmoji()](https://github.com/encomp/codenext_emojify/blob/06-branch/app/src/main/java/com/google/codenext/emojify/bitmap/Emojifier.java#L33)
+   method.
+3. Create a variable of type [Bitmap](https://developer.android.com/reference/android/graphics/Bitmap)
+   called `emojiBitmap` to hold the appropriate Emoji as a bitmap.
+4. 
 
