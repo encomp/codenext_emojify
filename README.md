@@ -111,5 +111,11 @@ to the following name `detectFacesAndOverlayEmoji()`.
       ```java
       BitmapFactory.decodeResource(context.getResources(), R.drawable.frown);
       ```
-6. Finally add the emojiBitmap to a face.
+6. Call [addBitmapToFace()](https://github.com/encomp/codenext_emojify/blob/06-branch/app/src/main/java/com/google/codenext/emojify/bitmap/Emojifier.java#L151),
+passing in the `resultBitmap`, the `emojiBitmap` and the `Face`  object,
+and assigning the result to resultBitmap.
+
+7. Finally [return](https://github.com/encomp/codenext_emojify/blob/06-branch/app/src/main/java/com/google/codenext/emojify/bitmap/Emojifier.java#L82)
+`resultBitmap` at the end of the method.
+
 
