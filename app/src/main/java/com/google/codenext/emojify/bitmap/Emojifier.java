@@ -69,7 +69,7 @@ public final class Emojifier {
         whichEmoji(face);
 
         // TODO (3.5): Create a switch statement on the result of the whichEmoji() call, and assign
-        //  the proper emoji bitmap to the variable you created.
+        //  the proper emoji bitmap to the variable emojiBitmap.
 
         // TODO (3.6): Call addBitmapToFace(), passing in the resultBitmap, the emojiBitmap and the
         //  Face  object, and assigning the result to resultBitmap.
