@@ -9,7 +9,7 @@ then processing that meta data, performing some analysis and recognition
 of patterns steps, then finally performing an action.
 
 <p align="center">
-    <img src="/resources/pipeline.png" data-canonical-src="/images/pipeline.png" width="533" height="200" />
+    <img src="/resources/pipeline.png" data-canonical-src="/images/pipeline.png" width="371" height="200" />
 </p>
 
 ### Reflection
