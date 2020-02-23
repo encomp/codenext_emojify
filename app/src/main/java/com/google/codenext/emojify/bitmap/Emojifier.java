@@ -50,7 +50,7 @@ public final class Emojifier {
     Timber.tag(TAG).d("The number of faces found are: " + faces.size());
 
     // TODO (3.2): Create a variable called resultBitmap and initialize it to the original picture
-    // bitmap passed into the detectFacesAndOverlayEmoji() method.
+    //  bitmap passed into the detectFacesAndOverlayEmoji() method.
 
     // If there are no faces on a bitmap show a Toast message.
     if (faces.size() == 0) {
@@ -62,17 +62,17 @@ public final class Emojifier {
         // Log the probabilities for each face using the method whichEmoji.
 
         // TODO (3.3) Create a variable of type Bitmap called emojiBitmap to hold the appropriate
-        // Emoji as a bitmap.
+        //  Emoji as a bitmap.
 
-        // TODO (3.4): Create a variable called emoji to hold the appropriate Emoji result
-        // from the call of the method whichEmoji().
+        // TODO (3.4): Create a variable called emoji to hold the result from the call of the method
+        //  whichEmoji().
         whichEmoji(face);
 
         // TODO (3.5): Create a switch statement on the result of the whichEmoji() call, and assign
-        // the proper emoji bitmap to the variable you created.
+        //  the proper emoji bitmap to the variable you created.
 
         // TODO (3.6): Call addBitmapToFace(), passing in the resultBitmap, the emojiBitmap and the
-        // Face  object, and assigning the result to resultBitmap.
+        //  Face  object, and assigning the result to resultBitmap.
       }
     }
 
@@ -145,8 +145,8 @@ public final class Emojifier {
   }
 
   // TODO (2): Create a method called addBitmapToFace() which takes the background bitmap, the Emoji
-  // bitmap, and a Face object as arguments and returns the combined bitmap with the Emoji over the
-  // face.
+  //  bitmap, and a Face object as arguments and returns the combined bitmap with the Emoji over the
+  //  face.
   private static Bitmap addBitmapToFace(Bitmap backgroundBitmap, Bitmap emojiBitmap, Face face) {
     // Create a copy of the original image.
     Bitmap resultBitmap =
