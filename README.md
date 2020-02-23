@@ -5,13 +5,13 @@ The goal is to finish the app. To finish the app we need to draw an
 emoji on each face on the photo. These will require a bit of work.
 
 #### Refactor of the method `whichEmoji()`
-1. Change the return type from [`void`](https://github.com/encomp/codenext_emojify/blob/06-branch/app/src/main/java/com/google/codenext/emojify/bitmap/Emojifier.java#L95)
-   to [Emoji](https://github.com/encomp/codenext_emojify/blob/06-branch/app/src/main/java/com/google/codenext/emojify/bitmap/Emojifier.java#L177).
-2. Add the [`return`](https://github.com/encomp/codenext_emojify/blob/06-branch/app/src/main/java/com/google/codenext/emojify/bitmap/Emojifier.java#L138)
+1. Change the return type from [`void`](https://github.com/encomp/codenext_emojify/blob/06-branch/app/src/main/java/com/google/codenext/emojify/bitmap/Emojifier.java#L101)
+   to [Emoji](https://github.com/encomp/codenext_emojify/blob/06-branch/app/src/main/java/com/google/codenext/emojify/bitmap/Emojifier.java#L183).
+2. Add the [`return`](https://github.com/encomp/codenext_emojify/blob/06-branch/app/src/main/java/com/google/codenext/emojify/bitmap/Emojifier.java#L144)
    statement at the end of the method.
 
 #### Rename the method `detectFaces()`
-1. Change the name of the mehtod [detectFaces()](https://github.com/encomp/codenext_emojify/blob/06-branch/app/src/main/java/com/google/codenext/emojify/bitmap/Emojifier.java#L33)
+1. Change the name of the mehtod [detectFaces()](https://github.com/encomp/codenext_emojify/blob/06-branch/app/src/main/java/com/google/codenext/emojify/bitmap/Emojifier.java#L34)
 to the following name `detectFacesAndOverlayEmoji()`.
 
    You could do it using the Refactor :
@@ -25,7 +25,7 @@ to the following name `detectFacesAndOverlayEmoji()`.
 2. Create a variable of type [Bitmap](https://developer.android.com/reference/android/graphics/Bitmap).
    Define a new variable called `resultBitmap` and initialize it to the
    original `picture` bitmap passed into the
-   [detectFacesAndOverlayEmoji()](https://github.com/encomp/codenext_emojify/blob/06-branch/app/src/main/java/com/google/codenext/emojify/bitmap/Emojifier.java#L33)
+   [detectFacesAndOverlayEmoji()](https://github.com/encomp/codenext_emojify/blob/06-branch/app/src/main/java/com/google/codenext/emojify/bitmap/Emojifier.java#L34)
    method.
 3. Create a variable of type [Bitmap](https://developer.android.com/reference/android/graphics/Bitmap)
    called `emojiBitmap` to hold the appropriate Emoji as a bitmap.
