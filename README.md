@@ -10,6 +10,45 @@ emoji on each face on the photo. These will require a bit of work.
 2. Add the [`return`](https://github.com/encomp/codenext_emojify/blob/06-branch/app/src/main/java/com/google/codenext/emojify/bitmap/Emojifier.java#L144)
    statement at the end of the method.
 
+#### Add the missing functionality to the method `addBitmapToFace()`
+The aim of `addBitmapToFace()` is to take the background
+[Bitmap](https://developer.android.com/reference/android/graphics/Bitmap),
+an [emojiBitmap](https://developer.android.com/reference/android/graphics/Bitmap)
+and a [Face](https://developers.google.com/android/reference/com/google/android/gms/vision/face/Face)
+as arguments and returns the combined bitmap with the Emoji Bitmap over
+the given [Face](https://developers.google.com/android/reference/com/google/android/gms/vision/face/Face).
+
+1. Determine the size of the emoji to match the width and height of the
+   face.
+
+   1. The width of the emoji (`emojiWidth`) can be calculated as follows:
+
+     int `emojiWidth` = [Width of the `Face`](https://developers.google.com/android/reference/com/google/android/gms/vision/face/Face#getWidth())
+      X [EMOJI_SCALE_FACTOR](https://github.com/encomp/codenext_emojify/blob/06-branch/app/src/main/java/com/google/codenext/emojify/bitmap/Emojifier.java#L21)
+
+   2. The height of the emoji (`emojiHeight`) can be calculated as follows:
+
+     int `emojiHeight` = [Height of `emojiBitmap`](https://developer.android.com/reference/android/graphics/Bitmap#getHeight())
+      X `emojiWidth` / [Width of `emojiBitmap`](https://developer.android.com/reference/android/graphics/Bitmap#getWidth())
+      X [EMOJI_SCALE_FACTOR](https://github.com/encomp/codenext_emojify/blob/06-branch/app/src/main/java/com/google/codenext/emojify/bitmap/Emojifier.java#L21)
+
+2. To Scale the `emojiBitmap` we can use the method
+   [createScaledBitmap()](https://developer.android.com/reference/android/graphics/Bitmap#createScaledBitmap(android.graphics.Bitmap,%20int,%20int,%20boolean))
+
+3. Determine the emoji position so it best lines up with the face.
+
+   1. To determine the coordinate X (`emojiPositionX`) can be calculated
+   as follows:
+
+      ([`face` <a href="https://developer.android.com/reference/android/graphics/PointF#x"><b>X</b></a>](https://developers.google.com/android/reference/com/google/android/gms/vision/face/Face#public-pointf-getposition-)
+      `+` ([Width of the `face`](https://developers.google.com/android/reference/com/google/android/gms/vision/face/Face#public-float-getwidth-)
+      / 2)) - [Width of `emojiBitmap`](https://developer.android.com/reference/android/graphics/Bitmap#getWidth())
+      / 2
+
+   2.
+
+5. d
+
 #### Rename the method `detectFaces()`
 1. Change the name of the mehtod [detectFaces()](https://github.com/encomp/codenext_emojify/blob/06-branch/app/src/main/java/com/google/codenext/emojify/bitmap/Emojifier.java#L34)
 to the following name `detectFacesAndOverlayEmoji()`.
@@ -39,7 +78,8 @@ to the following name `detectFacesAndOverlayEmoji()`.
    **Hints**
 
    1. You need to build a [switch](https://github.com/encomp/codenext_emojify/blob/06-branch/app/src/main/java/com/google/codenext/emojify/ui/PhotoFragment.java#L81)
-      statement as follows:
+      statement as follows for each type of the enum class
+      [Emoji](https://github.com/encomp/codenext_emojify/blob/06-branch/app/src/main/java/com/google/codenext/emojify/bitmap/Emojifier.java#L183):
       ```java
       switch (emoji) {
           case FROWN:
@@ -53,9 +93,9 @@ to the following name `detectFacesAndOverlayEmoji()`.
           ...    
       }        
       ```
-   2. All the emojis images are under the res folder called
+   3. All the emojis images are under the res folder called
       [drawable](https://github.com/encomp/codenext_emojify/tree/06-branch/app/src/main/res/drawable).
-   3. You need to convert each Emoji image to a
+   4. You need to convert each Emoji image to a
       [Bitmap](https://developer.android.com/reference/android/graphics/Bitmap).
       This can be accomplish using the class
       [BitmapFactory](https://developer.android.com/reference/android/graphics/BitmapFactory#decodeResource(android.content.res.Resources,%20int,%20android.graphics.BitmapFactory.Options)).
