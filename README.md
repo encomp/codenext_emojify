@@ -40,7 +40,7 @@ the given [Face](https://developers.google.com/android/reference/com/google/andr
    1. To determine the coordinate X (`emojiPositionX`) can be calculated
    as follows:
 
-      ([`face` <a href="https://developer.android.com/reference/android/graphics/PointF#x"><b>X</b></a>](https://developers.google.com/android/reference/com/google/android/gms/vision/face/Face#public-pointf-getposition-)
+      ([`face`<a href="https://developer.android.com/reference/android/graphics/PointF#x"><b> X </b></a>](https://developers.google.com/android/reference/com/google/android/gms/vision/face/Face#public-pointf-getposition-)
       `+` ([Width of the `face`](https://developers.google.com/android/reference/com/google/android/gms/vision/face/Face#public-float-getwidth-)
       / 2)) - [Width of `emojiBitmap`](https://developer.android.com/reference/android/graphics/Bitmap#getWidth())
       / 2
