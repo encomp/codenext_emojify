@@ -119,4 +119,7 @@ and assigning the result to resultBitmap.
 7. Finally [return](https://github.com/encomp/codenext_emojify/blob/06-branch/app/src/main/java/com/google/codenext/emojify/bitmap/Emojifier.java#L82)
 `resultBitmap` at the end of the method.
 
-
+#### Save the `photo` in the class `HomeFragment`
+Save the result from `detectFacesandOverlayEmoji(...)` on the
+[photo](https://github.com/encomp/codenext_emojify/blob/06-branch/app/src/main/java/com/google/codenext/emojify/ui/HomeFragment.java#L137)
+variable.
