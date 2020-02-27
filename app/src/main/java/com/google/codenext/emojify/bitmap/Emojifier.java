@@ -25,7 +25,7 @@ public final class Emojifier {
 
   // TODO (3): Rename the method detectFaces()
   // TODO (3.1): Change the name of the detectFaces() method to detectFacesAndOverlayEmoji() and the
-  // return type from void to Bitmap
+  //  return type from void to Bitmap
   /**
    * Method for detecting faces in a bitmap.
    *
