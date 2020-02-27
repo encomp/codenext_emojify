@@ -23,7 +23,7 @@ public final class Emojifier {
   private static final double SMILING_PROB_THRESHOLD = .15;
   private static final double EYE_OPEN_PROB_THRESHOLD = .5;
 
-  // TODO (3): Refactor the method detectFaces()
+  // TODO (3): Rename the method detectFaces()
   // TODO (3.1): Change the name of the detectFaces() method to detectFacesAndOverlayEmoji() and the
   // return type from void to Bitmap
   /**
