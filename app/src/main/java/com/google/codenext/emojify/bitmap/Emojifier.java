@@ -145,9 +145,9 @@ public final class Emojifier {
     // TODO (1.2): Have the method return the selected Emoji type.
   }
 
-  // TODO (2): Create a method called addBitmapToFace() which takes the background bitmap, the Emoji
-  //  bitmap, and a Face object as arguments and returns the combined bitmap with the Emoji over the
-  //  face.
+  // TODO (2): Add the missing functionality to the method addBitmapToFace() which takes the
+  //  background bitmap, the Emoji bitmap, and a Face object as arguments and returns the combined
+  //  bitmap with the Emoji over the face.
   private static Bitmap addBitmapToFace(Bitmap backgroundBitmap, Bitmap emojiBitmap, Face face) {
     // Create a copy of the original image.
     Bitmap resultBitmap =
