@@ -13,6 +13,12 @@ for a sample on how to define your `TAG`.
 Go to the vision [tutorial](https://developers.google.com/vision/android/detect-faces-tutorial#creating_the_face_detector)
 and understand how to define and build a Face Detector.
 
+***Hint:***
+
+Instead of using the method `setLandmarkType(...)` replace this line for the following
+[method](https://developers.google.com/android/reference/com/google/android/gms/vision/face/FaceDetector.Builder#setClassificationType(int))
+instead `setClassificationType` with the argument `ALL_CLASSIFICATIONS`.
+
 #### Log the number of faces found on the bitmap.
 * Visit the vision tutorial to understand how to detect all on a `Frame`
   [faces](https://developers.google.com/vision/android/detect-faces-tutorial#detecting_faces_and_facial_landmarks).
